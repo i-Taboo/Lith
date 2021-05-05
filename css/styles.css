@@ -1,0 +1,57 @@
+body{
+    width: 97%;
+    height: 96vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Open Sans', sans-serif;
+    background: linear-gradient(150deg, #74f3cd, #f96609, #Cea250);
+    background-size: 400% 300%;
+    animation: BgGradient 5s ease infinite;
+}
+
+@keyframes BgGradient {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+}
+
+.botones{
+    width: 100%;
+    height: 35%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+ 
+.oculto{
+    transform: scale(0);
+}
+
+.botonprincipal{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    background-color: wheat;
+    height: 70%;
+    width: 13.5%;
+    border-radius: 100%;
+    cursor: pointer;
+    box-shadow:  0 0 1vw rgba(0, 0, 0, 5); 
+    transition: transform 0s, 0s, 1s; 
+    font-size: 3vw;
+}
+
+.botonprincipal:hover{
+        box-shadow: 0 0 0.5vw rgba(0, 0, 0, 5);
+    opacity: 90%;
+    transform: scale(1.2);
+    transition: transform 0s, 0s, 1s;
+    
+}
+.botonprincipal img{
+    width: 20%;
+    height: 20%;
+}

@@ -8,7 +8,8 @@ recognition.interResults = false;
 
 startrecord.addEventListener("click", () => {
     recognition.start();
-    
+    micro.removeAttribute('src','img/bxs-microphone-off.svg');
+    micro.setAttribute("src","img/bxs-microphone.svg")
 });
 
 
