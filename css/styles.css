@@ -41,7 +41,7 @@ body{
     cursor: pointer;
     box-shadow:  0 0 1vw rgba(0, 0, 0, 5); 
     transition: transform 0s, 0s, 1s; 
-    font-size: 3vw;
+    font-size: 2.5vw;
 }
 
 .botonprincipal:hover{
@@ -55,3 +55,52 @@ body{
     width: 20%;
     height: 20%;
 }
+
+.principio{
+    background-color: white;
+    border-radius: 2%;
+    width: 67%;
+    height: 50%;
+}
+
+.texto{
+    margin-left: 2%;
+    width: 95%;
+    height: 70%;
+    resize: none;
+}
+
+.startstop{
+    height: 22%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+ 
+.micros{
+    width: 100%;
+    height: 100%;
+}
+
+.butons{
+    font-size: 1.4vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3vw;
+    height: 3vw;
+    transition: transform 200ms, 200ms, 200ms ;
+}
+
+.butons:hover{
+    transition: transform  200ms, 200ms, 200ms;   
+    transform: scale(1.2);
+    opacity: 80%;
+
+}@media screen and (max-width:1080px){
+    .botonprincipal{
+        width: 50.5%;
+        font-size: 7vw;
+    }
+}
+
