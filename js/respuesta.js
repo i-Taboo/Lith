@@ -73,7 +73,13 @@ recognition.onresult = (event) => {
         respuesta = "¡Ok"+nombre+"! buscando en la J doble v"+url;
         window.open('https://www.jw.org/es/b%C3%BAsquedas/?q='+url);   
     }
-
+    else if (cmd. indexOf('busca en la tienda de facebook') > -1){
+        url = cmd;
+        str = url;
+        url = str.replace("busca en la tienda de facebook", ""); 
+        respuesta = "¡Ok"+nombre+"! buscando en facebook market place"+url;
+        window.open('https://www.facebook.com/marketplace/103740209665322/search/?query='+url);   
+    }
                     //habrir aplicaciones y redes sociales
 
     else if (cmd.indexOf("abrir whatsapp") > -1 || cmd.indexOf('abre whatsapp') > -1){
