@@ -64,10 +64,11 @@ recognition.onresult = (event) => {
         respuesta = "¡Ok"+nombre+"! buscando en Youtube"+url;
         window.open('https://www.youtube.com/results?search_query='+url);   
     }
-    else if (cmd. indexOf('busca en la j doble b') > -1){
+    else if (cmd. indexOf('busca en la j doble b') > -1 || cmd.indexOf("busca en la j dobe") > -1){
         url = cmd;
         str = url;
-        url = str.replace("busca en la j doble b", ""); 
+        url = str.replace("busca en la j doble b", "");
+        url = str.replace("busca en la j doble", "");
         respuesta = "¡Ok"+nombre+"! buscando en la Jw"+url;
         window.open('https://www.jw.org/es/b%C3%BAsquedas/?q='+url);   
     }
