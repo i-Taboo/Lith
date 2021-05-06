@@ -64,6 +64,13 @@ recognition.onresult = (event) => {
         respuesta = "¡Ok"+nombre+"! buscando en Youtube"+url;
         window.open('https://www.youtube.com/results?search_query='+url);   
     }
+    else if (cmd. indexOf('busca en la j doble b') > -1){
+        url = cmd;
+        str = url;
+        url = str.replace("busca en la j doble b", ""); 
+        respuesta = "¡Ok"+nombre+"! buscando en la Jw"+url;
+        window.open('https://www.jw.org/es/b%C3%BAsquedas/?q='+url);   
+    }
 
                     //habrir aplicaciones y redes sociales
 
@@ -91,7 +98,7 @@ recognition.onresult = (event) => {
         window.open('https://discord.com/app'); 
         respuesta = "¡Ok"+nombre+"! Abriendo Discord.";
     }
-    else if (cmd.indexOf("abre la página web de los testigos de jehová.") > -1 || cmd.indexOf('abre la jw') > -1) {
+    else if (cmd.indexOf("abre la página de los testigos de jehová.") > -1 || cmd.indexOf('abre la jw') > -1) {
         window.open('https://www.jw.org/es/'); 
         respuesta = "¡Ok"+nombre+"! Abriendo la pagina principal de los Testigos de Jehova.";
 
