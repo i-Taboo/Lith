@@ -102,5 +102,12 @@ body{
         width: 50.5%;
         font-size: 7vw;
     }
+    .butons{
+        font-size:4.7vw;
+    }
+    .butons img{
+        width: 6vw;
+        height: 6vw;
+    }
 }
 
