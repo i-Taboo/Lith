@@ -153,6 +153,12 @@ console.log(cmd);
         respuesta = repetir;
     }
 
+    //chistes
+
+    else if (cmd.indexOf("cuentame un chiste") > -1) {
+        respuesta = chistes[numerorandom]; 
+     }
+
 
     
     
