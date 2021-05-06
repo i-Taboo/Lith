@@ -64,12 +64,13 @@ recognition.onresult = (event) => {
         respuesta = "¡Ok"+nombre+"! buscando en Youtube"+url;
         window.open('https://www.youtube.com/results?search_query='+url);   
     }
-    else if (cmd. indexOf('busca en la j doble b') > -1 || cmd.indexOf("busca en la j dobe") > -1){
+    else if (cmd. indexOf('busca en la j doble b') > -1  || cmd.indexOf('busca en la j doble') > -1  || cmd.indexOf('busca en la pagina de los testigos de jehova') > -1){
         url = cmd;
         str = url;
-        url = str.replace("busca en la j doble b", "");
-        url = str.replace("busca en la j doble", "");
-        respuesta = "¡Ok"+nombre+"! buscando en la Jw"+url;
+        url = str.replace("busca en la j doble b", ""); 
+        url = str.replace("busca en la j doble", ""); 
+        url = str.replace("busca en la pagina de los testigos de jehova", ""); 
+        respuesta = "¡Ok"+nombre+"! buscando en la J doble v"+url;
         window.open('https://www.jw.org/es/b%C3%BAsquedas/?q='+url);   
     }
 
@@ -99,7 +100,7 @@ recognition.onresult = (event) => {
         window.open('https://discord.com/app'); 
         respuesta = "¡Ok"+nombre+"! Abriendo Discord.";
     }
-    else if (cmd.indexOf("abre la página de los testigos de jehová.") > -1 || cmd.indexOf('abre la jw') > -1) {
+    else if (cmd.indexOf("abre la página de los testigos de jehová") > -1 || cmd.indexOf('abrir la pagina de los testigos de jehová') > -1) {
         window.open('https://www.jw.org/es/'); 
         respuesta = "¡Ok"+nombre+"! Abriendo la pagina principal de los Testigos de Jehova.";
 
