@@ -125,7 +125,7 @@ recognition.onresult = (event) => {
      
                     //repite despues de mi
 
-    else if (cmd.indexOf("repite después de mi") > -1) {
+    else if (cmd.indexOf("repite después de mí") > -1) {
         repetir = cmd;
         str = repetir;
         repetir = str.replace("repite después de mí","");
