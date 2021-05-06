@@ -64,12 +64,12 @@ recognition.onresult = (event) => {
         respuesta = "¡Ok"+nombre+"! buscando en Youtube"+url;
         window.open('https://www.youtube.com/results?search_query='+url);   
     }
-    else if (cmd. indexOf('busca en la j doble b') > -1  || cmd.indexOf('busca en la j doble') > -1  || cmd.indexOf('busca en la pagina de los testigos de jehova') > -1){
+    else if (cmd. indexOf('busca en la j doble b') > -1  || cmd.indexOf('busca en la j doble') > -1  || cmd.indexOf('busca en la pagina de los testigos de jehová') > -1){
         url = cmd;
         str = url;
         url = str.replace("busca en la j doble b", ""); 
         url = str.replace("busca en la j doble", ""); 
-        url = str.replace("busca en la pagina de los testigos de jehova", ""); 
+        url = str.replace("busca en la pagina de los testigos de jehová", ""); 
         respuesta = "¡Ok"+nombre+"! buscando en la J doble v"+url;
         window.open('https://www.jw.org/es/b%C3%BAsquedas/?q='+url);   
     }
