@@ -8,9 +8,12 @@ recognition.onresult = (event) => {
     
 
     micro.removeAttribute('src','img/bxs-microphone.svg');
-    micro.setAttribute("src","img/bxs-microphone-off.svg")
+   
     
-    //comandos
+    //comandos:
+
+    // comandos interactivos
+    
     if (cmd.indexOf('hola') > -1) {
         respuesta = 'Hola como estas';
     }
@@ -33,25 +36,6 @@ recognition.onresult = (event) => {
         respuesta = "Usted es marica compadre";
         meta.setAttribute("content", "2;url=https://www.youtube.com/watch?v=4pa6Fht97pk")
     }
-    else if (cmd.indexOf('música') > -1 && cmd.indexOf('relajante.') > -1) {
-        respuesta = "Buscando musica lofi de la epoca";
-        meta.setAttribute("content", "2;url=https://www.youtube.com/watch?v=c1dy_VMCVvY");     
-    }
-
-    else if (cmd. indexOf('busca en Google') > -1){
-        url = cmd;
-        str = url;
-        url = str.replace("busca en Google", "");
-        respuesta = "¡Ok"+nombre+"! buscando en google"+url;
-        meta.setAttribute("content", "2;url=https://www.google.com/search?q="+url);   
-    }
-    else if (cmd. indexOf('busca en youtube') > -1 || cmd.indexOf("Busca en YouTube") > -1){
-        url = cmd;
-        str = url;
-        url = str.replace("busca en youtube", ""); 
-        respuesta = "¡Ok"+nombre+"! buscando en Youtube"+url;
-        meta.setAttribute("content", "2;url=https://www.youtube.com/results?search_query="+url);   
-    }
     else if (cmd. indexOf('quién eres') > -1){
         respuesta = "Soy un asistente por voz echo completamente en Html, Javascript y Css, y mi nombre es Lith, existo nada mas para ayudar y cumplir ciertas tareas"
     }
@@ -62,57 +46,100 @@ recognition.onresult = (event) => {
         respuesta = "De acuerdo, disculpe las molestias"
     }
 
-    else if (cmd.indexOf("abrir whatsapp") > -1){
-        meta.setAttribute("content", "2;url=https://web.whatsapp.com/");
+
+
+    //comandos de utilidades
+                    //buscar en diversas plataformas
+    else if (cmd. indexOf('busca en google') > -1){
+        url = cmd;
+        str = url;
+        url = str.replace("busca en google", "");
+        respuesta = "¡Ok"+nombre+"! buscando en google"+url;
+        window.open('https://www.google.com/search?q='+url);   
+    }
+    else if (cmd. indexOf('busca en youtube') > -1){
+        url = cmd;
+        str = url;
+        url = str.replace("busca en youtube", ""); 
+        respuesta = "¡Ok"+nombre+"! buscando en Youtube"+url;
+        window.open('https://www.youtube.com/results?search_query='+url);   
+    }
+
+                    //habrir aplicaciones y redes sociales
+
+    else if (cmd.indexOf("abrir whatsapp") > -1 || cmd.indexOf('abre whatsapp') > -1){
+        window.open('https://web.whatsapp.com/'); 
         respuesta = "¡Ok"+nombre+"! Abriendo Whatsapp Web.";
 
     }
-    else if (cmd.indexOf("abrir facebook") > -1){
-        meta.setAttribute("content", "2;url=https://es-la.facebook.com/");
+    else if (cmd.indexOf("abrir facebook") > -1 || cmd.indexOf('abre facebook') > -1){
+        window.open('https://www.facebook.com/'); 
         respuesta = "¡Ok"+nombre+"! Abriendo Facebook.";
 
     }
-    else if (cmd.indexOf("abrir instagram") > -1){
-        meta.setAttribute("content", "2;url=https://www.instagram.com/");
+    else if (cmd.indexOf("abrir instagram") > -1 || cmd.indexOf('abre instagram') > -1){
+        window.open('https://www.instagram.com/'); 
         respuesta = "¡Ok"+nombre+"! Abriendo Instagram.";
 
     }
-    else if (cmd.indexOf("abrir twitter") > -1){
-        meta.setAttribute("content", "2;url=https://twitter.com/?lang=es");
+    else if (cmd.indexOf("abrir twitter") > -1 || cmd.indexOf('abre twitter') > -1){
+        window.open('https://twitter.com/?lang=es'); 
         respuesta = "¡Ok"+nombre+"! Abriendo Twitter.";
 
     }
-    else if (cmd.indexOf("abrir discord") > -1) {
-        meta.setAttribute("content", "2;url=https://discord.com/");
+    else if (cmd.indexOf("abrir discord") > -1 || cmd.indexOf('abre discord') > -1) {
+        window.open('https://discord.com/app'); 
         respuesta = "¡Ok"+nombre+"! Abriendo Discord.";
-
     }
+    else if (cmd.indexOf("abre la página web de los testigos de jehová.") > -1 || cmd.indexOf('abre la jw') > -1) {
+        window.open('https://www.jw.org/es/'); 
+        respuesta = "¡Ok"+nombre+"! Abriendo la pagina principal de los Testigos de Jehova.";
+
+    
+    
+    }
+
+    
+                    //modos escritura voz a texto
     
     else if (cmd.indexOf("modo escritura") > -1){
         meta.setAttribute("content", "2;url=voz a texto.html");
         respuesta = "¡Ok"+nombre+"! iniciando el modo escritura.";
 
     }
+     
+                    //repite despues de mi
+
+    else if (cmd.indexOf("repite despues de mi") > -1) {
+        repetir = cmd;
+        str = repetir;
+        repetir = str.replace("repite después de mí","");
+        respuesta = repetir;
+    }
 
 
-
-
-
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     // buscar lo que el usuario diga sin necesidad de google
     else if (respuesta.indexOf("") > -1){
         url = cmd;
-        meta.setAttribute("content", "2;url=https://www.google.com/search?q="+url);
+        window.open('https://www.google.com/search?q='+url);
         respuesta = "Buscando en Google"+cmd;
     }
-    // repetir por si acaso
-    // if (respuesta === "lo siento, parece que no e entendido, podrias repetirlo?") {
-    //     recognition.start();
-    //     micro.removeAttribute('src','img/bxs-microphone-off.svg');
-    //     micro.setAttribute("src","img/bxs-microphone.svg")
-    // }
     // Bot Habla
-
+    
     speechSynthesis.speak(new SpeechSynthesisUtterance(respuesta));
+    micro.setAttribute("src","img/bxs-microphone-off.svg")
     console.log(respuesta);
 }
