@@ -4,7 +4,28 @@ recognition.onresult = (event) => {
     var cmd = frase;
     cmd = cmd.toLowerCase();
     var respuesta = "";
-    console.log(cmd);
+// quitar acentos
+    cmd = cmd.replace("á", "a");
+    cmd = cmd.replace("é", "e");
+    cmd = cmd.replace("í", "i");
+    cmd = cmd.replace("ó", "o");
+    cmd = cmd.replace("ú", "u");
+    cmd = cmd.replace("à", "a");
+    cmd = cmd.replace("è", "e");
+    cmd = cmd.replace("ì", "i");
+    cmd = cmd.replace("ò", "o");
+    cmd = cmd.replace("ù", "u");
+    cmd = cmd.replace("Á", "A");
+    cmd = cmd.replace("É", "E");
+    cmd = cmd.replace("Í", "I");
+    cmd = cmd.replace("Ó", "O");
+    cmd = cmd.replace("Ú", "U");
+    cmd = cmd.replace("À", "A");
+    cmd = cmd.replace("È", "E");
+    cmd = cmd.replace("Ì", "I");
+    cmd = cmd.replace("Ò", "O");
+    cmd = cmd.replace("Ù", "U");
+console.log(cmd);
     
 
     micro.removeAttribute('src','img/bxs-microphone.svg');
@@ -17,7 +38,7 @@ recognition.onresult = (event) => {
     if (cmd.indexOf('hola') > -1) {
         respuesta = 'Hola como estas';
     }
-    else if (cmd.indexOf('cómo estás') > -1) {
+    else if (cmd.indexOf('como estas') > -1) {
         respuesta = '¡Muy bien! ¡Gracias por preguntar!, ¿Y tu?';
     } 
     else if (cmd.indexOf('mal') > -1 && cmd.indexOf("Me") >-1 || cmd.indexOf('mal.') > -1){
@@ -32,11 +53,11 @@ recognition.onresult = (event) => {
         nombre = str.replace("mi nombre es", "");
         respuesta = 'Mucho gusto'+nombre+ ' yo soy Lith';
     }
-    else if (cmd.indexOf('¿quieres ser mi oni chan?') > -1 || cmd.indexOf("quieres ser mi onii Chan") > -1) {
+    else if (cmd.indexOf('quieres ser mi oni chan') > -1 || cmd.indexOf("quieres ser mi onii Chan") > -1) {
         respuesta = "Usted es marica compadre";
         meta.setAttribute("content", "2;url=https://www.youtube.com/watch?v=4pa6Fht97pk")
     }
-    else if (cmd. indexOf('quién eres') > -1){
+    else if (cmd. indexOf('quien eres') > -1){
         respuesta = "Soy un asistente por voz echo completamente en Html, Javascript y Css, y mi nombre es Lith, existo nada mas para ayudar y cumplir ciertas tareas"
     }
     else if (cmd. indexOf("mi nombre") > -1){
@@ -64,12 +85,12 @@ recognition.onresult = (event) => {
         respuesta = "¡Ok"+nombre+"! buscando en Youtube"+url;
         window.open('https://www.youtube.com/results?search_query='+url);   
     }
-    else if (cmd. indexOf('busca en la j doble b') > -1  || cmd.indexOf('busca en la j doble') > -1  || cmd.indexOf('busca en la página de los testigos de jehová') > -1){
+    else if (cmd. indexOf('busca en la j doble b') > -1  || cmd.indexOf('busca en la j doble') > -1  || cmd.indexOf('busca en la pagina de los testigos de jehova') > -1){
         url = cmd;
         str = url;
         url = str.replace("busca en la j doble b", ""); 
         url = str.replace("busca en la j doble", ""); 
-        url = str.replace("busca en la página de los testigos de jehová", ""); 
+        url = str.replace("busca en la pagina de los testigos de jehova", ""); 
         respuesta = "¡Ok"+nombre+"! buscando en la J doble v"+url;
         window.open('https://www.jw.org/es/b%C3%BAsquedas/?q='+url);   
     }
@@ -106,7 +127,7 @@ recognition.onresult = (event) => {
         window.open('https://discord.com/app'); 
         respuesta = "¡Ok"+nombre+"! Abriendo Discord.";
     }
-    else if (cmd.indexOf("abre la página de los testigos de jehová") > -1 || cmd.indexOf('abrir la pagina de los testigos de jehová') > -1) {
+    else if (cmd.indexOf("abre la pagina de los testigos de jehova") > -1 || cmd.indexOf('abrir la pagina de los testigos de jehova') > -1) {
         window.open('https://www.jw.org/es/'); 
         respuesta = "¡Ok"+nombre+"! Abriendo la página principal de los Testigos de Jehova.";
 
@@ -125,10 +146,10 @@ recognition.onresult = (event) => {
      
                     //repite despues de mi
 
-    else if (cmd.indexOf("repite después de mí") > -1) {
+    else if (cmd.indexOf("repite despues de mi") > -1) {
         repetir = cmd;
         str = repetir;
-        repetir = str.replace("repite después de mí","");
+        repetir = str.replace("repite despues de mi","");
         respuesta = repetir;
     }
 
