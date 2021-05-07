@@ -5,7 +5,30 @@ body{
     justify-content: center;
     align-items: center;
     font-family: 'Open Sans', sans-serif;
-    background: linear-gradient(150deg, #f3eb74, #5bfaff, #ff9361);
+    background: linear-gradient(150deg, #74f3cd, #f96609, #Cea250);
+    background-size: 400% 300%;
+    animation: BgGradient 5s ease infinite;
+}
+
+.theme_iron{
+    background: linear-gradient(150deg, #0000009c, #ffffff, #0000009c);
+    background-size: 400% 300%;
+    animation: BgGradient 5s ease infinite;
+}
+
+.theme_night{
+    background: linear-gradient(150deg, #20276e, #3a3a3a, #00212e);
+    background-size: 400% 300%;
+    animation: BgGradient 5s ease infinite;
+}
+
+.theme_rose_rain{
+    background: linear-gradient(150deg, #ff77d2, #a200d3, #ff00f2);
+    background-size: 400% 300%;
+    animation: BgGradient 5s ease infinite;
+}
+.theme_natural{
+    background: linear-gradient(150deg, #363636, #63ff44, #896eff);
     background-size: 400% 300%;
     animation: BgGradient 5s ease infinite;
 }
@@ -27,6 +50,11 @@ body{
  
 .oculto{
     transform: scale(0);
+}
+
+.opacidad_menor{
+    opacity: 70%;
+    transition: opacity 0s, 2s, 1s;
 }
 
 .botonprincipal{

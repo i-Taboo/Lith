@@ -57,39 +57,44 @@ console.log(cmd);
     else if (cmd. indexOf("nada.") > -1 || cmd. indexOf("no te preocupes") > -1  ){
         respuesta = "De acuerdo, disculpe las molestias"
     }
+    else if (cmd.indexOf('di un chiste') > -1 || cmd.indexOf('cuenta un chiste') > -1) {
+        respuesta = chistes[numerorandom]; 
+     }
+     else if (cmd.indexOf("repite despues de mi") > -1) {
+        repetir = cmd;
+        str = repetir;
+        repetir = str.replace("repite despues de mi","");
+        respuesta = repetir;
+    }
 
-
+      
 
     //comandos de utilidades
                     //buscar en diversas plataformas
     else if (cmd. indexOf('busca en google') > -1){
         url = cmd;
-        str = url;
-        url = str.replace("busca en google", "");
+        url = url.replace("busca en google", "");
         respuesta = "¡Ok"+nombre+"! buscando en google"+url;
         window.open('https://www.google.com/search?q='+url);   
     }
     else if (cmd. indexOf('busca en youtube') > -1){
         url = cmd;
-        str = url;
-        url = str.replace("busca en youtube", ""); 
+        url = url.replace("busca en youtube", ""); 
         respuesta = "¡Ok"+nombre+"! buscando en Youtube"+url;
         window.open('https://www.youtube.com/results?search_query='+url);   
     }
     else if (cmd. indexOf('busca en la j doble b') > -1  || cmd.indexOf('busca en la j doble') > -1  || cmd.indexOf('busca en la pagina de los testigos de jehova') > -1 || cmd.indexOf('busca en la jw') > -1){
         url = cmd;
-        str = url;
-        url = str.replace("busca en la j doble b", ""); 
-        url = str.replace("busca en la j doble", ""); 
-        url = str.replace("busca en la pagina de los testigos de jehova", ""); 
-        url = str.replace("busca en la jw", ""); 
+        url = url.replace("busca en la j doble b", ""); 
+        url = url.replace("busca en la j doble", ""); 
+        url = url.replace("busca en la pagina de los testigos de jehova", ""); 
+        url = url.replace("busca en la jw", ""); 
         respuesta = "¡Ok"+nombre+"! buscando en la J doble v"+url;
         window.open('https://www.jw.org/es/b%C3%BAsquedas/?q='+url);   
     }
     else if (cmd. indexOf('busca en la tienda de facebook') > -1){
         url = cmd;
-        str = url;
-        url = str.replace("busca en la tienda de facebook", ""); 
+        url = url.replace("busca en la tienda de facebook", ""); 
         respuesta = "¡Ok"+nombre+"! buscando en facebook market place"+url;
         window.open('https://www.facebook.com/marketplace/103740209665322/search/?query='+url);   
     }
@@ -128,52 +133,61 @@ console.log(cmd);
     }
 
     
-                    //modos escritura voz a texto
+                    //modos y extras de Lith 
     
     else if (cmd.indexOf("modo escritura") > -1){
         meta.setAttribute("content", "2;url=voz a texto.html");
         respuesta = "¡Ok"+nombre+"! iniciando el modo escritura.";
 
     }
-     
-                    //repite despues de mi
+    else if (cmd.indexOf("tema") === 0) {
+        tema = cmd;
+        tema = tema.replace("tema", "")
+        respuesta = "cambiando al tema visuál"+tema;
+ }
+        switch (tema) {
+    case " por defecto.":       
+        document.body.removeAttribute("class"," ")
+        startrecord.classList.remove("opacidad_menor");
+        break;
+    case " oscuro.":
+        document.getElementById("cuerpo").classList.add("theme_night");
+        startrecord.classList.add("opacidad_menor");
+        break;
+    case ", lluvia de rosas.":
+        document.getElementById("cuerpo").classList.add("theme_rose_rain");
+        startrecord.classList.remove("opacidad_menor");
+        break;
 
-    else if (cmd.indexOf("repite despues de mi") > -1) {
-        repetir = cmd;
-        str = repetir;
-        repetir = str.replace("repite despues de mi","");
-        respuesta = repetir;
-    }
-
-    //chistes
-
-    else if (cmd.indexOf("cuentame un chiste") > -1 || cmd.indexOf('dime un chiste') > -1 || cmd.indexOf('di un chiste') > -1 || cmd.indexOf('cuenta un chiste') > -1) {
-        respuesta = chistes[numerorandom]; 
-     }
+    case ", hierro.":
+        document.getElementById("cuerpo").classList.add("theme_iron");
+        startrecord.classList.remove("opacidad_menor");
+        break;
 
 
+    case " naturaleza.":
+        document.getElementById("cuerpo").classList.add("theme_natural");
+        startrecord.classList.remove("opacidad_menor");
+        break;
+    default:
+        break;
+}
+
+
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    // buscar lo que el usuario diga sin necesidad de google
-    else if (respuesta.indexOf("") > -1){
+// buscar lo que el usuario diga sin necesidad de google
+   if (respuesta === ""){
         url = cmd;
         window.open('https://www.google.com/search?q='+url);
         respuesta = "Buscando en Google"+cmd;
     }
-    // Bot Habla
     
+    // Bot Habla
     speechSynthesis.speak(new SpeechSynthesisUtterance(respuesta));
     micro.setAttribute("src","img/bxs-microphone-off.svg")
     console.log(respuesta);
+
+
+
 }

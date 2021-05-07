@@ -5,6 +5,7 @@ var meta = document.getElementById("redirigir");
 var url;
 var repetir;
 var audio = document.getElementById("audio");
+var tema;
 var chistes = [
     "Hola, ¿está Agustín?.. No.. estoy incomodín.", 
     "¿Cuál es la fruta más divertida?.. La naranja ja ja ja ja",
