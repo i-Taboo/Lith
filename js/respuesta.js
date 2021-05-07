@@ -2,6 +2,7 @@ recognition.onresult = (event) => {
     const results = event.results;
     const frase = results[results.length - 1][0].transcript;
     var cmd = frase;
+    var numerorandom = Math.floor(Math.random() * 11);
     cmd = cmd.toLowerCase();
     var respuesta = "";
 // quitar acentos
@@ -15,16 +16,6 @@ recognition.onresult = (event) => {
     cmd = cmd.replace("ì", "i");
     cmd = cmd.replace("ò", "o");
     cmd = cmd.replace("ù", "u");
-    cmd = cmd.replace("Á", "A");
-    cmd = cmd.replace("É", "E");
-    cmd = cmd.replace("Í", "I");
-    cmd = cmd.replace("Ó", "O");
-    cmd = cmd.replace("Ú", "U");
-    cmd = cmd.replace("À", "A");
-    cmd = cmd.replace("È", "E");
-    cmd = cmd.replace("Ì", "I");
-    cmd = cmd.replace("Ò", "O");
-    cmd = cmd.replace("Ù", "U");
 console.log(cmd);
     
 
@@ -85,12 +76,13 @@ console.log(cmd);
         respuesta = "¡Ok"+nombre+"! buscando en Youtube"+url;
         window.open('https://www.youtube.com/results?search_query='+url);   
     }
-    else if (cmd. indexOf('busca en la j doble b') > -1  || cmd.indexOf('busca en la j doble') > -1  || cmd.indexOf('busca en la pagina de los testigos de jehova') > -1){
+    else if (cmd. indexOf('busca en la j doble b') > -1  || cmd.indexOf('busca en la j doble') > -1  || cmd.indexOf('busca en la pagina de los testigos de jehova') > -1 || cmd.indexOf('busca en la jw') > -1){
         url = cmd;
         str = url;
         url = str.replace("busca en la j doble b", ""); 
         url = str.replace("busca en la j doble", ""); 
         url = str.replace("busca en la pagina de los testigos de jehova", ""); 
+        url = str.replace("busca en la jw", ""); 
         respuesta = "¡Ok"+nombre+"! buscando en la J doble v"+url;
         window.open('https://www.jw.org/es/b%C3%BAsquedas/?q='+url);   
     }
@@ -155,7 +147,7 @@ console.log(cmd);
 
     //chistes
 
-    else if (cmd.indexOf("cuentame un chiste") > -1) {
+    else if (cmd.indexOf("cuentame un chiste") > -1 || cmd.indexOf('dime un chiste') > -1 || cmd.indexOf('di un chiste') > -1 || cmd.indexOf('cuenta un chiste') > -1) {
         respuesta = chistes[numerorandom]; 
      }
 

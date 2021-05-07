@@ -5,14 +5,14 @@ body{
     justify-content: center;
     align-items: center;
     font-family: 'Open Sans', sans-serif;
-    background: linear-gradient(150deg, #74f3cd, #f96609, #Cea250);
+    background: linear-gradient(150deg, #f3eb74, #5bfaff, #ff9361);
     background-size: 400% 300%;
     animation: BgGradient 5s ease infinite;
 }
 
 @keyframes BgGradient {
     0% {background-position: 0% 50%;}
-    50% {background-position: 100% 50%;}
+    50% {background-position: 90% 90%;}
     100% {background-position: 0% 50%;}
 }
 
