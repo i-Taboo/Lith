@@ -53,7 +53,7 @@ console.log(cmd);
         nombre = str.replace("mi nombre es", "");
         respuesta = 'Mucho gusto'+nombre+ ' yo soy Lith';
     }
-    else if (cmd.indexOf('quieres ser mi oni chan') > -1 || cmd.indexOf("quieres ser mi onii Chan") > -1) {
+    else if (cmd.indexOf('quieres ser mi oni chan') > -1 || cmd.indexOf("quieres ser mi onii chan") > -1) {
         respuesta = "Usted es marica compadre";
         meta.setAttribute("content", "2;url=https://www.youtube.com/watch?v=4pa6Fht97pk")
     }
