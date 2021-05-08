@@ -6,6 +6,9 @@ var url;
 var repetir;
 var audio = document.getElementById("audio");
 var tema;
+var repitechiste;
+var repitedenuevo;
+var ch2;
 var chistes = [
     "Hola, ¿está Agustín?.. No.. estoy incomodín.", 
     "¿Cuál es la fruta más divertida?.. La naranja ja ja ja ja",

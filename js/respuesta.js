@@ -58,14 +58,21 @@ console.log(cmd);
         respuesta = "De acuerdo, disculpe las molestias"
     }
     else if (cmd.indexOf('di un chiste') > -1 || cmd.indexOf('cuenta un chiste') > -1) {
-        respuesta = chistes[numerorandom]; 
+        respuesta = chistes[numerorandom];
+        repitechiste = chistes; 
      }
+            // else if (cmd. indexOf("cuentalo de nuevo") > -1 || cmd. indexOf("dilo de nuevo") > -1) {
+            //    respuesta = repitechiste; 
+            // }
      else if (cmd.indexOf("repite despues de mi") > -1) {
         repetir = cmd;
-        str = repetir;
-        repetir = str.replace("repite despues de mi","");
+        repetir = repetir.replace("repite despues de mi","");
         respuesta = repetir;
+        repetirdenuevo = repetir;
     }
+            else if (cmd.indexOf("repite de nuevo") === 0 || cmd. indexOf("repite eso") === 0) {
+             respuesta = repetirdenuevo;   
+            }
 
       
 
