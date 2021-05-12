@@ -3,10 +3,12 @@ recognition.onresult = (event) => {
     const frase = results[results.length - 1][0].transcript;
     var cmd = frase;
     var numerorandom = Math.floor(Math.random() * 11);
+    var numerorandom2 = Math.floor(Math.random() * 4);
     cmd = cmd.toLowerCase();
     var respuesta = "";
 // quitar acentos
     cmd = cmd.replace("á", "a");
+    cmd = cmd.replace("jehová", "jehova");
     cmd = cmd.replace("é", "e");
     cmd = cmd.replace("í", "i");
     cmd = cmd.replace("ó", "o");
@@ -40,22 +42,14 @@ console.log(cmd);
     }
     else if (cmd.indexOf('mi nombre es') > -1) {
         nombre = cmd;
-        str = nombre;
-        nombre = str.replace("mi nombre es", "");
+        nombre = nombre.replace("mi nombre es", "");
         respuesta = 'Mucho gusto'+nombre+ ' yo soy Lith';
-    }
-    else if (cmd.indexOf('quieres ser mi oni chan') > -1 || cmd.indexOf("quieres ser mi onii chan") > -1) {
-        respuesta = "Usted es marica compadre";
-        meta.setAttribute("content", "2;url=https://www.youtube.com/watch?v=4pa6Fht97pk")
     }
     else if (cmd. indexOf('quien eres') > -1){
         respuesta = "Soy un asistente por voz echo completamente en Html, Javascript y Css, y mi nombre es Lith, existo nada mas para ayudar y cumplir ciertas tareas"
     }
     else if (cmd. indexOf("mi nombre") > -1){
         respuesta = "Tu nombre es "+nombre+" ¿Se te ha olvidado?"
-    }
-    else if (cmd. indexOf("nada.") > -1 || cmd. indexOf("no te preocupes") > -1  ){
-        respuesta = "De acuerdo, disculpe las molestias"
     }
     else if (cmd.indexOf('di un chiste') > -1 || cmd.indexOf('cuenta un chiste') > -1) {
         respuesta = chistes[numerorandom];
@@ -90,12 +84,10 @@ console.log(cmd);
         respuesta = "¡Ok"+nombre+"! buscando en Youtube"+url;
         window.open('https://www.youtube.com/results?search_query='+url);   
     }
-    else if (cmd. indexOf('busca en la j doble b') > -1  || cmd.indexOf('busca en la j doble') > -1  || cmd.indexOf('busca en la pagina de los testigos de jehova') > -1 || cmd.indexOf('busca en la jw') > -1){
+    else if (cmd.indexOf("busca en la pagina de los testigos de jehova") > -1){
         url = cmd;
-        url = url.replace("busca en la j doble b", ""); 
-        url = url.replace("busca en la j doble", ""); 
         url = url.replace("busca en la pagina de los testigos de jehova", ""); 
-        url = url.replace("busca en la jw", ""); 
+        url = url.replace(".", ""); 
         respuesta = "¡Ok"+nombre+"! buscando en la J doble v"+url;
         window.open('https://www.jw.org/es/b%C3%BAsquedas/?q='+url);   
     }
@@ -131,7 +123,7 @@ console.log(cmd);
         window.open('https://discord.com/app'); 
         respuesta = "¡Ok"+nombre+"! Abriendo Discord.";
     }
-    else if (cmd.indexOf("abre la pagina de los testigos de jehova") > -1 || cmd.indexOf('abrir la pagina de los testigos de jehova') > -1) {
+    else if (cmd.indexOf("abre") > -1 && cmd.indexOf("testigos de jehova") > -1 || cmd.indexOf('abrir') > -1 && cmd.indexOf("testigos de jehova") > -1 ) {
         window.open('https://www.jw.org/es/'); 
         respuesta = "¡Ok"+nombre+"! Abriendo la página principal de los Testigos de Jehova.";
 
@@ -152,8 +144,12 @@ console.log(cmd);
         tema = tema.replace("tema", "")
         respuesta = "cambiando al tema visuál"+tema;
  }
-        switch (tema) {
-    case " por defecto.":       
+            switch (tema){
+    case " por defecto." :       
+        document.body.removeAttribute("class"," ")
+        startrecord.classList.remove("opacidad_menor");
+        break;
+        case " por defecto" :       
         document.body.removeAttribute("class"," ")
         startrecord.classList.remove("opacidad_menor");
         break;
@@ -161,21 +157,34 @@ console.log(cmd);
         document.getElementById("cuerpo").classList.add("theme_night");
         startrecord.classList.add("opacidad_menor");
         break;
+        case " oscuro":
+            document.getElementById("cuerpo").classList.add("theme_night");
+            startrecord.classList.add("opacidad_menor");
+            break;
     case ", lluvia de rosas.":
         document.getElementById("cuerpo").classList.add("theme_rose_rain");
         startrecord.classList.remove("opacidad_menor");
         break;
-
+        case " lluvia de rosas":
+            document.getElementById("cuerpo").classList.add("theme_rose_rain");
+            startrecord.classList.remove("opacidad_menor");
+            break;
     case ", hierro.":
         document.getElementById("cuerpo").classList.add("theme_iron");
         startrecord.classList.remove("opacidad_menor");
         break;
-
-
+        case " hierro":
+            document.getElementById("cuerpo").classList.add("theme_iron");
+            startrecord.classList.remove("opacidad_menor");
+            break;
     case " naturaleza.":
         document.getElementById("cuerpo").classList.add("theme_natural");
         startrecord.classList.remove("opacidad_menor");
         break;
+        case " naturaleza":
+            document.getElementById("cuerpo").classList.add("theme_natural");
+            startrecord.classList.remove("opacidad_menor");
+            break;
     default:
         break;
 }
@@ -185,9 +194,7 @@ console.log(cmd);
     
 // buscar lo que el usuario diga sin necesidad de google
    if (respuesta === ""){
-        url = cmd;
-        window.open('https://www.google.com/search?q='+url);
-        respuesta = "Buscando en Google"+cmd;
+       respuesta = respuestarandom[numerorandom2];
     }
     
     // Bot Habla
