@@ -10,8 +10,15 @@ startrecord.addEventListener("click", () => {
     startrecord.classList.add("dicipar_shadow");
     recognition.start();
     micro.removeAttribute('src','img/bxs-microphone-off.svg');
-    micro.setAttribute("src","img/bxs-microphone.svg")
+    micro.setAttribute("src","img/bx-circle.svg")
+    micro.classList.add("circulo");
+    document.getElementById("lith").innerHTML = '';
 });
+
+
+
+
+
 
 
 

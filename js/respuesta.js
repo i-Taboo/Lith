@@ -43,13 +43,17 @@ console.log(cmd);
     else if (cmd.indexOf('mi nombre es') > -1) {
         nombre = cmd;
         nombre = nombre.replace("mi nombre es", "");
-        respuesta = 'Mucho gusto'+nombre+ ' yo soy Lith';
+        nombre = nombre.replace(".", "");
+        haynombre = "si";
+        localStorage.setItem("haynombre", haynombre)
+        localStorage.setItem("name",(nombre));
+        respuesta = 'Mucho gusto'+username+ ' yo soy Lith';
     }
     else if (cmd. indexOf('quien eres') > -1){
         respuesta = "Soy un asistente por voz echo completamente en Html, Javascript y Css, y mi nombre es Lith, existo nada mas para ayudar y cumplir ciertas tareas"
     }
     else if (cmd. indexOf("mi nombre") > -1){
-        respuesta = "Tu nombre es "+nombre+" ¿Se te ha olvidado?"
+        respuesta = "Tu nombre es "+username+" ¿Se te ha olvidado?"
     }
     else if (cmd.indexOf('di un chiste') > -1 || cmd.indexOf('cuenta un chiste') > -1) {
         respuesta = chistes[numerorandom];
@@ -71,61 +75,75 @@ console.log(cmd);
       
 
     //comandos de utilidades
+                    //configuracion de usuario
+    else if (cmd.indexOf("desactiva la visualizacion de texto") > -1) {
+        vdtxt = 1;
+        document.getElementById("cuadrotexto").classList.add("oculto2");
+        localStorage.setItem("visualizaciondetexto",(vdtxt));
+        respuesta = "Visualizaciòn de texto desactivada correctamente"
+    }
+    else if (cmd.indexOf("activa la visualizacion de texto") > -1) {
+        vdtxt = 0;
+        document.getElementById("cuadrotexto").classList.remove("oculto2");
+        localStorage.setItem("visualizaciondetexto", (vdtxt));
+        respuesta = "Visualizaciòn de texto activada correctamente"
+    }
+                      
                     //buscar en diversas plataformas
     else if (cmd. indexOf('busca en google') > -1){
         url = cmd;
         url = url.replace("busca en google", "");
-        respuesta = "¡Ok"+nombre+"! buscando en google"+url;
+        respuesta = "¡Ok"+username+"! buscando en google"+url;
         window.open('https://www.google.com/search?q='+url);   
     }
     else if (cmd. indexOf('busca en youtube') > -1){
         url = cmd;
         url = url.replace("busca en youtube", ""); 
-        respuesta = "¡Ok"+nombre+"! buscando en Youtube"+url;
+        respuesta = "¡Ok"+username+"! buscando en Youtube"+url;
         window.open('https://www.youtube.com/results?search_query='+url);   
     }
     else if (cmd.indexOf("busca en la pagina de los testigos de jehova") > -1){
         url = cmd;
         url = url.replace("busca en la pagina de los testigos de jehova", ""); 
         url = url.replace(".", ""); 
-        respuesta = "¡Ok"+nombre+"! buscando en la J doble v"+url;
+        respuesta = "¡Ok"+username+"! buscando en la J doble v"+url;
         window.open('https://www.jw.org/es/b%C3%BAsquedas/?q='+url);   
     }
     else if (cmd. indexOf('busca en la tienda de facebook') > -1){
         url = cmd;
         url = url.replace("busca en la tienda de facebook", ""); 
-        respuesta = "¡Ok"+nombre+"! buscando en facebook market place"+url;
+        respuesta = "¡Ok"+username+"! buscando en facebook market place"+url;
         window.open('https://www.facebook.com/marketplace/103740209665322/search/?query='+url);   
     }
                     //habrir aplicaciones y redes sociales
 
     else if (cmd.indexOf("abrir whatsapp") > -1 || cmd.indexOf('abre whatsapp') > -1){
         window.open('https://web.whatsapp.com/'); 
-        respuesta = "¡Ok"+nombre+"! Abriendo Whatsapp Web.";
+        respuesta = "¡Ok"+username+"! Abriendo Whatsapp Web.";
 
     }
     else if (cmd.indexOf("abrir facebook") > -1 || cmd.indexOf('abre facebook') > -1){
         window.open('https://www.facebook.com/'); 
-        respuesta = "¡Ok"+nombre+"! Abriendo Facebook.";
+        respuesta = "¡Ok"+username+"! Abriendo Facebook.";
 
     }
     else if (cmd.indexOf("abrir instagram") > -1 || cmd.indexOf('abre instagram') > -1){
         window.open('https://www.instagram.com/'); 
-        respuesta = "¡Ok"+nombre+"! Abriendo Instagram.";
+        respuesta = "¡Ok"+username+"! Abriendo Instagram.";
 
     }
     else if (cmd.indexOf("abrir twitter") > -1 || cmd.indexOf('abre twitter') > -1){
         window.open('https://twitter.com/?lang=es'); 
-        respuesta = "¡Ok"+nombre+"! Abriendo Twitter.";
+        respuesta = "¡Ok"+username+"! Abriendo Twitter.";
 
     }
     else if (cmd.indexOf("abrir discord") > -1 || cmd.indexOf('abre discord') > -1) {
         window.open('https://discord.com/app'); 
-        respuesta = "¡Ok"+nombre+"! Abriendo Discord.";
+        respuesta = "¡Ok"+username+"! Abriendo Discord.";
     }
     else if (cmd.indexOf("abre") > -1 && cmd.indexOf("testigos de jehova") > -1 || cmd.indexOf('abrir') > -1 && cmd.indexOf("testigos de jehova") > -1 ) {
         window.open('https://www.jw.org/es/'); 
-        respuesta = "¡Ok"+nombre+"! Abriendo la página principal de los Testigos de Jehova.";
+        respuesta = "¡Ok"+username+"! Abriendo la página principal de los Testigos de Jehova.";
 
     
     
@@ -136,12 +154,14 @@ console.log(cmd);
     
     else if (cmd.indexOf("modo escritura") > -1){
         meta.setAttribute("content", "2;url=voz a texto.html");
-        respuesta = "¡Ok"+nombre+"! iniciando el modo escritura.";
+        respuesta = "¡Ok"+username+"! iniciando el modo escritura.";
 
     }
     else if (cmd.indexOf("tema") === 0) {
-        tema = cmd;
-        tema = tema.replace("tema", "")
+        teme = cmd;
+        teme = teme.replace("tema", "")
+        localStorage.setItem("temas",teme)
+        tema = localStorage.getItem("temas");
         respuesta = "cambiando al tema visuál"+tema;
  }
             switch (tema){
@@ -201,6 +221,11 @@ console.log(cmd);
     speechSynthesis.speak(new SpeechSynthesisUtterance(respuesta));
     micro.setAttribute("src","img/bxs-microphone-off.svg")
     console.log(respuesta);
+    document.getElementById("lith").innerHTML = 'LITH';
+    document.getElementById("textodicho").innerHTML = username+":"+frase;
+    document.getElementById("textoescuchado").innerHTML = "LITH:"+respuesta;
+    micro.classList.remove("circulo");
+    
 
 
 

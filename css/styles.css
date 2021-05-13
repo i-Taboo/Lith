@@ -4,6 +4,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     font-family: 'Open Sans', sans-serif;
     background: linear-gradient(150deg, #74f3cd, #f96609, #Cea250);
     background-size: 400% 300%;
@@ -50,11 +51,25 @@ body{
  
 .oculto{
     transform: scale(0);
+    margin-left: -41.3%;
 }
 
 .opacidad_menor{
     opacity: 70%;
     transition: opacity 0s, 2s, 1s;
+}
+
+.circulo_explosivo{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.explosion{
+    transform:scale(50) ;
+    background-color: wheat;
+    opacity: 50%;
 }
 
 .botonprincipal{
@@ -70,6 +85,33 @@ body{
     box-shadow:  0 0 2vw rgba(0, 0, 0, 5); 
     transition: transform 0s, 0s, 1s; 
     font-size: 2.5vw;
+}
+
+.textolith{
+    color: white;
+    width: 25%;
+    height: 20%;
+    border-radius: 8%;
+    transition: transform 0s, 0s, 1s;
+    opacity: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.oculto2{
+    width: 0%;
+    height: 0%;
+    transition: transform 0s, 0s, 1s;
+    transform: scale(0);
+}
+
+.texto{
+    display: flex;
+    justify-content: center;
+    font-weight:bold;
+    text-shadow: 3px 3px 4px #3a3a3a ;
+    font-size: 1.3vw;
 }
 
 /* .dicipar_shadow{
@@ -109,6 +151,17 @@ body{
     justify-content: space-evenly;
 }
  
+.circulo{
+    animation: circulo 3s ease infinite;
+    transition: transform 0s, 0s, 0s;  
+}
+
+@keyframes circulo {
+    0% {transform: scale(1)}
+    50% {transform: scale(3)}
+    100% {transform: scale(1)}
+}
+
 .micros{
     width: 100%;
     height: 100%;
@@ -134,12 +187,18 @@ body{
         width: 50.5%;
         font-size: 7vw;
     }
+    .texto{
+        font-size: 4vw;
+    }
     .butons{
         font-size:4.7vw;
     }
     .butons img{
         width: 6vw;
         height: 6vw;
+    }
+    .textolith{
+        width: 50%;
     }
 }
 

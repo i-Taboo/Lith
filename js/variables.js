@@ -1,4 +1,6 @@
-var nombre = "";
+var nombre = "Anonimo";
+var haynombre = "no";
+var vdtxt;
 var str;
 var micro = document.getElementById("micro");
 var meta = document.getElementById("redirigir");
