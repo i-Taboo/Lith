@@ -47,7 +47,7 @@ console.log(cmd);
         haynombre = "si";
         localStorage.setItem("haynombre", haynombre)
         localStorage.setItem("name",(nombre));
-        respuesta = 'Mucho gusto'+username+ ' yo soy Lith';
+        respuesta = 'Mucho gusto'+nombre+ ' yo soy Lith';
     }
     else if (cmd. indexOf('quien eres') > -1){
         respuesta = "Soy un asistente por voz echo completamente en Html, Javascript y Css, y mi nombre es Lith, existo nada mas para ayudar y cumplir ciertas tareas"
@@ -162,7 +162,7 @@ console.log(cmd);
         teme = teme.replace("tema", "")
         localStorage.setItem("temas",teme)
         tema = localStorage.getItem("temas");
-        respuesta = "cambiando al tema visuál"+tema;
+        respuesta = "cambiando al tema visuál"+tema+" si no se aplica de inmediato, pruebe recargar la pagina";
  }
             switch (tema){
     case " por defecto." :       
