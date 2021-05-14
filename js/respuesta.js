@@ -120,7 +120,6 @@ console.log(cmd);
     else if (cmd.indexOf("abrir whatsapp") > -1 || cmd.indexOf('abre whatsapp') > -1){
         window.open('https://web.whatsapp.com/'); 
         respuesta = "¡Ok"+username+"! Abriendo Whatsapp Web.";
-
     }
     else if (cmd.indexOf("abrir facebook") > -1 || cmd.indexOf('abre facebook') > -1){
         window.open('https://www.facebook.com/'); 
@@ -148,7 +147,110 @@ console.log(cmd);
     
     
     }
+                        //recordar eventos
+    else if (cmd.indexOf("mis recordatorios") > -1 || cmd.indexOf('lee mi agenda') > -1 || cmd.indexOf('que hay') > -1 && cmd.indexOf('agenda') > -1) {
+        if (remember === "") {
+            respuesta = "estas libre, no hay nada en la agenda"
+        }else{
+        respuesta = "Actualmente en tu agenda hay que "+remember;
+        }
+    }
+    else if (cmd.indexOf("borrar recordatorio") > -1 || cmd.indexOf('eliminar recordatorio') > -1 || cmd.indexOf('limpia') > -1 && cmd.indexOf('agenda') > -1 || cmd.indexOf('eliminar') > -1 && cmd.indexOf('agenda') > -1) {
+        localStorage.removeItem("cuandorec");
+        remember = remember.replace("no se te olvide que", "")
+        respuesta = "De acuerdo, eliminando el recordatorio"+remember;
+        remember = "";
+        localStorage.setItem("remember", remember);
+    }                    
 
+    else if (cmd.indexOf("recuerdame") > -1 || cmd.indexOf('agrega en la agenda') > -1) {
+         recuerdo = cmd;
+         recuerdo = recuerdo.replace("recuerdame", "");
+         recuerdo = recuerdo.replace("que", "");
+         recuerdo = recuerdo.replace("tengo", "tienes");
+         recuerdo = recuerdo.replace("mi", "tu");
+         recordar = "no se te olvide que"+recuerdo;
+         respuesta = "de acuerdo, entre hoy y en una semana cuando quieres que te lo recuerde?";
+         localStorage.setItem("remember",recordar);
+    recognition2.start();
+    
+
+         recognition2.onresult = (event) => {
+            const results = event.results;
+            const frase = results[results.length - 1][0].transcript;
+            var cmd = frase;
+            cmd = cmd.toLowerCase();
+            var respuesta = "";
+            micro.setAttribute("src","img/bxs-microphone-off.svg")
+             document.getElementById("lith").innerHTML = 'LITH';
+             document.getElementById("textodicho").innerHTML = username+":"+frase;
+             document.getElementById("textoescuchado").innerHTML = "LITH:"+respuesta;
+             micro.classList.remove("circulo");
+        // quitar acentos
+            cmd = cmd.replace("á", "a");
+            cmd = cmd.replace("jehová", "jehova");
+            cmd = cmd.replace("é", "e");
+            cmd = cmd.replace("í", "i");
+            cmd = cmd.replace("ó", "o");
+            cmd = cmd.replace("ú", "u");
+            cmd = cmd.replace("à", "a");
+            cmd = cmd.replace("è", "e");
+            cmd = cmd.replace("ì", "i");
+            cmd = cmd.replace("ò", "o");
+            cmd = cmd.replace("ù", "u");
+        console.log(cmd);
+        
+            if (cmd.indexOf("hoy") > -1) {
+                respuesta = "almacenando en la agenda para hoy";
+                whenrmb = hoy;
+                localStorage.setItem("cuandorec", whenrmb)
+                console.log(whenrmb);
+            }else if (cmd.indexOf("mañana") > -1) {
+                whenrmb = hoy+1;
+                localStorage.setItem("cuandorec", whenrmb)
+                console.log(whenrmb);
+                respuesta = "almacenando en la agenda para mañana";
+            }else if (cmd.indexOf("pasado mañana") > -1 || cmd.indexOf('dentro de 2') > -1) {
+                whenrmb = hoy+2;
+                localStorage.setItem("cuandorec", whenrmb)
+                console.log(whenrmb);
+                respuesta = "almacenando en la agenda para pasado mañana";
+            }
+            else if (cmd.indexOf("en 4 dias") > -1 || cmd.indexOf('dentro de 4') > -1) {
+                whenrmb = hoy+3;
+                localStorage.setItem("cuandorec", whenrmb)
+                console.log(whenrmb);
+                respuesta = "almacenando en la agenda para dentro de 3 dias";
+            }
+            else if (cmd.indexOf("en 5 dias") > -1 || cmd.indexOf('dentro de 5') > -1) {
+                whenrmb = hoy+4;
+                localStorage.setItem("cuandorec", whenrmb)
+                console.log(whenrmb);
+                respuesta = "almacenando en la agenda para dentro de 4 dias";
+            }
+            else if (cmd.indexOf("en 6 dias") > -1 || cmd.indexOf('dentro de 6') > -1) {
+                whenrmb = hoy+5;
+                localStorage.setItem("cuandorec", whenrmb)
+                console.log(whenrmb);
+                respuesta = "almacenando en la agenda para dentro de cinco dias";
+            }
+            else if (cmd.indexOf("en una semana") > -1 || cmd.indexOf('dentro de una semana') > -1) {
+                whenrmb = hoy+6;
+                localStorage.setItem("cuandorec", whenrmb)
+                console.log(whenrmb);
+                respuesta = "almacenando en la agenda para dentro de una semana";
+            }
+
+
+            speechSynthesis.speak(new SpeechSynthesisUtterance(respuesta));
+            micro.setAttribute("src","img/bxs-microphone-off.svg")
+            console.log(respuesta);
+            document.getElementById("lith").innerHTML = 'LITH';
+            document.getElementById("textodicho").innerHTML = username+":"+frase;
+            document.getElementById("textoescuchado").innerHTML = "LITH:"+respuesta;
+            micro.classList.remove("circulo");
+         }
+    }   
     
                     //modos y extras de Lith 
     

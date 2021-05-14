@@ -1,7 +1,11 @@
 let username = localStorage.getItem("name");
 var vsdtxt = localStorage.getItem("visualizaciondetexto");
 let namecheck = localStorage.getItem("haynombre");
+let remember = localStorage.getItem("remember");
+let recuh = localStorage.getItem("recuh")
 
+let whenr = localStorage.getItem("cuandorec");
+let today = JSON.stringify(hoy);
 tema = localStorage.getItem("temas");
 console.log(username);
 console.log(vsdtxt);
@@ -15,9 +19,9 @@ let numerorandom3 = Math.floor(Math.random() * 6);
     "¿¡Es un ser!?, ¿¡Es un gigante!?, ah es"+username+" bienvenido"+
     "¿En que trabajaremos el dia de hoy?"
 ]
-if (namecheck.indexOf("si") > -1) {
-    speechSynthesis.speak(new SpeechSynthesisUtterance(bienvenidas[numerorandom3]));
-}
+// if (namecheck.indexOf("si") > -1) {
+//     speechSynthesis.speak(new SpeechSynthesisUtterance(bienvenidas[numerorandom3]));
+// }
 // base de configuraciones
     //   visualizacion de texto
     if (vsdtxt.indexOf("1") > -1) {
@@ -72,3 +76,9 @@ switch (tema){
         break;
 }
 
+
+
+if (whenr === today) {
+    speechSynthesis.speak(new SpeechSynthesisUtterance(remember));
+    console.log(remember);
+}

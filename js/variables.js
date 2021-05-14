@@ -1,5 +1,10 @@
 var nombre = "Anonimo";
 var haynombre = "no";
+var whenrmb;
+const fecha = new Date();
+var hoy = fecha.getDate();
+console.log(hoy);
+var recuerdo;
 var vdtxt;
 var str;
 var micro = document.getElementById("micro");
