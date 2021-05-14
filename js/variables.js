@@ -1,5 +1,6 @@
 var nombre = "Anonimo";
 var haynombre = "no";
+
 var whenrmb;
 const fecha = new Date();
 var hoy = fecha.getDate();
@@ -34,3 +35,6 @@ var respuestarandom = [
     "1.. 2 3.. ¿cuanto mas tengo que contar para que veas que no entendi lo que me dijiste?",
     "¡Ok! buscando AAAAAAA acabo de ver una mosca.. espera.. no tengo acceso a la camara.. ¿entonces como rayos vi la mosca?"
 ];
+
+
+

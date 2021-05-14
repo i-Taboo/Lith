@@ -3,7 +3,6 @@ var vsdtxt = localStorage.getItem("visualizaciondetexto");
 let namecheck = localStorage.getItem("haynombre");
 let remember = localStorage.getItem("remember");
 let recuh = localStorage.getItem("recuh")
-
 let whenr = localStorage.getItem("cuandorec");
 let today = JSON.stringify(hoy);
 tema = localStorage.getItem("temas");
@@ -81,4 +80,34 @@ switch (tema){
 if (whenr === today) {
     speechSynthesis.speak(new SpeechSynthesisUtterance(remember));
     console.log(remember);
+    setInterval(notificacionagenda, 900000);
 }
+Notification.requestPermission();
+function notificacionagenda() {
+    var notification = null;
+    
+    if (!('Notification' in window)) {
+    // el navegador no soporta la API de notificaciones
+        alert('Su navegador no soporta la API de Notificaciones :(');
+        return;
+    } else if (Notification.permission === "granted") {
+    notification = new Notification(
+                        "Recordatorio",                                       {
+                            body: remember,
+                            dir: 'ltr'
+                        });
+    
+    } else if (Notification.permission !== 'denied') {
+        Notification
+                .requestPermission(function(permission) {
+            if (permission === "granted") {
+                notification = new Notification(
+                        "Recordatorio",                                       {
+                            body: remember,
+                            dir: 'ltr'
+                        });
+            }
+        });
+    }
+    
+    }
