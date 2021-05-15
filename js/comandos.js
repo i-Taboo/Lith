@@ -17,11 +17,22 @@ recognition.addEventListener("start", () => {
     document.getElementById("lith").innerHTML = '';
 })
 
-let recognition2 = new webkitSpeechRecognition();
-recognition2.lang = 'es-ES';
-recognition2.continuous = false;
-recognition2.interResults = false;
-recognition2.addEventListener("start", () => {
+let recognitionDiadere = new webkitSpeechRecognition();
+recognitionDiadere.lang = 'es-ES';
+recognitionDiadere.continuous = false;
+recognitionDiadere.interResults = false;
+recognitionDiadere.addEventListener("start", () => {
+    micro.removeAttribute('src','img/bxs-microphone-off.svg');
+    micro.setAttribute("src","img/bx-circle.svg")
+    micro.classList.add("circulo");
+    document.getElementById("lith").innerHTML = '';
+})
+
+let recognitionHoradere = new webkitSpeechRecognition();
+recognitionHoradere.lang = 'es-ES';
+recognitionHoradere.continuous = false;
+recognitionHoradere.interResults = false;
+recognitionHoradere.addEventListener("start", () => {
     micro.removeAttribute('src','img/bxs-microphone-off.svg');
     micro.setAttribute("src","img/bx-circle.svg")
     micro.classList.add("circulo");

@@ -18,13 +18,16 @@ recognition.onresult = (event) => {
     cmd = cmd.replace("ì", "i");
     cmd = cmd.replace("ò", "o");
     cmd = cmd.replace("ù", "u");
+    cmd = cmd.replace("lith", "");
+    cmd = cmd.replace("liz", "");
+    cmd = cmd.replace("lin", "");
 console.log(cmd);
     micro.removeAttribute('src','img/bxs-microphone.svg');
 
     //comandos:
 
     // comandos interactivos
-    if (cmd.indexOf('hola') === 0 || cmd.indexOf('que onda') > -1) {
+    if (cmd.indexOf('hola') === 0 || cmd.indexOf('que onda') > -1 || cmd.indexOf('que hay') > -1) {
         respuesta = 'Hola como estas';
     }
     else if (cmd.indexOf('como estas') > -1 || cmd.indexOf('que tal estas') > -1  || cmd.indexOf('como te encuentras') > -1  || cmd.indexOf('como andas') > -1) {
@@ -49,7 +52,7 @@ console.log(cmd);
     else if (cmd.indexOf('di un chiste') > -1 || cmd.indexOf('cuenta un chiste') > -1  || cmd.indexOf('tira un chiste') > -1  || cmd.indexOf('sacate un chiste') > -1) {
         respuesta = chistes[numerorandom];
         repitechiste = chistes; 
-     }
+    }
             // else if (cmd. indexOf("cuentalo de nuevo") > -1 || cmd. indexOf("dilo de nuevo") > -1) {
             //    respuesta = repitechiste; 
             // }
@@ -86,11 +89,15 @@ console.log(cmd);
     }
                       
                     //buscar en diversas plataformas
-    else if (cmd. indexOf('abrir guia') > -1 || cmd.indexOf('iniciar guia') > -1 || cmd.indexOf('ver guia') > -1){
+    else if (cmd. indexOf('lista de comandos') > -1 || cmd.indexOf('guia de comandos') > -1 || cmd.indexOf('buscar') > -1 &&  cmd.indexOf('guia') > -1){
         // window.open('https://www.google.com/search?q='+url);   
-        respuesta = "por ahora la guia no esta disponible, lamento las molestias"
+        respuesta = "por ahora el soporte no esta disponible, lamento las molestias"
     }
-    else if (cmd. indexOf('busca en google') > -1){
+    else if (cmd. indexOf('contactar') > -1 && cmd.indexOf('soporte') > -1 || cmd.indexOf('buscar') > -1 && cmd.indexOf('soporte') > -1){
+        window.open('https://www.facebook.com/Para.que.me.lees/');   
+        respuesta = "de acuerdo, redirigiendo al contacto de soporte, lamento las molestias"
+    }
+    else if (cmd. indexOf('busca en google') > -1 || cmd.indexOf('busca') > -1 ){
         url = cmd;
         url = url.replace("busca en google", "");
         respuesta = "¡Ok"+username+"! buscando en google"+url;
@@ -116,38 +123,38 @@ console.log(cmd);
         window.open('https://www.facebook.com/marketplace/103740209665322/search/?query='+url);   
     }
                     //habrir aplicaciones y redes sociales
-    else if (cmd.indexOf("abrir google") > -1 || cmd.indexOf('abre google') > -1 || cmd.indexOf('busca google') > -1 ){
+    else if (cmd.indexOf("abrir google") > -1 || cmd.indexOf('abre google') > -1 || cmd.indexOf('busca google') > -1 || cmd.indexOf('ir a google') > -1){
         window.open('https://google.com/'); 
         respuesta = "¡Ok"+username+"! Abriendo Whatsapp Web.";
     }                
-    else if (cmd.indexOf("abrir youtube") > -1 || cmd.indexOf('abre youtube') > -1 || cmd.indexOf('busca youtube') > -1 ){
+    else if (cmd.indexOf("abrir youtube") > -1 || cmd.indexOf('abre youtube') > -1 || cmd.indexOf('busca youtube') > -1 || cmd.indexOf('ir a youtube') > -1 ){
         window.open('https://www.youtube.com/'); 
         respuesta = "¡Ok"+username+"! Abriendo Whatsapp Web.";
     }
-    else if (cmd.indexOf("abrir whatsapp") > -1 || cmd.indexOf('abre whatsapp') > -1 || cmd.indexOf('busca whatsapp') > -1 ){
+    else if (cmd.indexOf("abrir whatsapp") > -1 || cmd.indexOf('abre whatsapp') > -1 || cmd.indexOf('busca whatsapp') > -1 || cmd.indexOf('ir a whatsapp') > -1){
         window.open('https://web.whatsapp.com/'); 
         respuesta = "¡Ok"+username+"! Abriendo Whatsapp Web.";
     }
-    else if (cmd.indexOf("abrir facebook") > -1 || cmd.indexOf('abre facebook') > -1 || cmd.indexOf('busca facebook') > -1 ){
+    else if (cmd.indexOf("abrir facebook") > -1 || cmd.indexOf('abre facebook') > -1 || cmd.indexOf('busca facebook') > -1 || cmd.indexOf('ir a facebook') > -1){
         window.open('https://www.facebook.com/'); 
         respuesta = "¡Ok"+username+"! Abriendo Facebook.";
 
     }
-    else if (cmd.indexOf("abrir instagram") > -1 || cmd.indexOf('abre instagram') > -1 || cmd.indexOf('busca instagram') > -1 ){
+    else if (cmd.indexOf("abrir instagram") > -1 || cmd.indexOf('abre instagram') > -1 || cmd.indexOf('busca instagram') > -1 || cmd.indexOf('ir a instagram') > -1){
         window.open('https://www.instagram.com/'); 
         respuesta = "¡Ok"+username+"! Abriendo Instagram.";
 
     }
-    else if (cmd.indexOf("abrir twitter") > -1 || cmd.indexOf('abre twitter') > -1 || cmd.indexOf('busca twitter') > -1 ){
+    else if (cmd.indexOf("abrir twitter") > -1 || cmd.indexOf('abre twitter') > -1 || cmd.indexOf('busca twitter') > -1 || cmd.indexOf('ir a twitter') > -1){
         window.open('https://twitter.com/?lang=es'); 
         respuesta = "¡Ok"+username+"! Abriendo Twitter.";
 
     }
-    else if (cmd.indexOf("abrir discord") > -1 || cmd.indexOf('abre discord') > -1 || cmd.indexOf('busca discord') > -1 ) {
+    else if (cmd.indexOf("abrir discord") > -1 || cmd.indexOf('abre discord') > -1 || cmd.indexOf('busca discord') > -1 || cmd.indexOf('ir a discord') > -1) {
         window.open('https://discord.com/app'); 
         respuesta = "¡Ok"+username+"! Abriendo Discord.";
     }
-    else if (cmd.indexOf("abre") > -1 && cmd.indexOf("testigos de jehova") > -1 || cmd.indexOf('abrir') > -1 && cmd.indexOf("testigos de jehova") > -1 ) {
+    else if (cmd.indexOf("abre") > -1 && cmd.indexOf("testigos de jehova") > -1 || cmd.indexOf('abrir') > -1 && cmd.indexOf("testigos de jehova") > -1 || cmd.indexOf('ir') > -1 && cmd.indexOf('testigos de jehova') > -1) {
         window.open('https://www.jw.org/es/'); 
         respuesta = "¡Ok"+username+"! Abriendo la página principal de los Testigos de Jehova.";
 
@@ -155,7 +162,7 @@ console.log(cmd);
     
     }
                         //recordar eventos
-    else if (cmd.indexOf("mis recordatorios") > -1 || cmd.indexOf('lee mi agenda') > -1 || cmd.indexOf('que hay') > -1 && cmd.indexOf('agenda') > -1) {
+    else if (cmd.indexOf("mi recordatorio") > -1 || cmd.indexOf('lee mi agenda') > -1 || cmd.indexOf('que hay') > -1 && cmd.indexOf('agenda') > -1) {
         if (remember === "") {
             respuesta = "estas libre, no hay nada en la agenda"
         }else{
@@ -164,25 +171,30 @@ console.log(cmd);
     }
     else if (cmd.indexOf("borrar recordatorio") > -1 || cmd.indexOf('eliminar recordatorio') > -1 || cmd.indexOf('limpia') > -1 && cmd.indexOf('agenda') > -1 || cmd.indexOf('eliminar') > -1 && cmd.indexOf('agenda') > -1) {
         localStorage.removeItem("cuandorec");
+        localStorage.removeItem("hcuandorec")
         remember = remember.replace("no se te olvide que", "")
         respuesta = "De acuerdo, eliminando el recordatorio"+remember;
         remember = "";
         localStorage.setItem("remember", remember);
     }                    
 
-    else if (cmd.indexOf("recuerdame") > -1 || cmd.indexOf('agrega en la agenda') > -1) {
+    else if (cmd.indexOf("recuerdame") > -1 || cmd.indexOf('agendame') > -1 || cmd.indexOf('agenda') > -1 || cmd.indexOf('recuerda') > -1) {
          recuerdo = cmd;
          recuerdo = recuerdo.replace("recuerdame", "");
+         recuerdo = recuerdo.replace("agendame", "");
+         recuerdo = recuerdo.replace("recuerda", "");
+         recuerdo = recuerdo.replace("agenda", "");
          recuerdo = recuerdo.replace("que", "");
          recuerdo = recuerdo.replace("tengo", "tienes");
          recuerdo = recuerdo.replace("mi", "tu");
+         recuerdo = recuerdo.replace("yo", "tu");
          recordar = "no se te olvide que"+recuerdo;
          respuesta = "de acuerdo, entre hoy y en una semana cuando quieres que te lo recuerde?";
          localStorage.setItem("remember",recordar);
-    recognition2.start();
+         new SpeechSynthesisUtterance(respuesta).onend = recognitionDiadere.start()
     
 
-         recognition2.onresult = (event) => {
+         recognitionDiadere.onresult = (event) => {
             const results = event.results;
             const frase = results[results.length - 1][0].transcript;
             var cmd = frase;
@@ -193,7 +205,7 @@ console.log(cmd);
              document.getElementById("textodicho").innerHTML = username+":"+frase;
              document.getElementById("textoescuchado").innerHTML = "LITH:"+respuesta;
              micro.classList.remove("circulo");
-        // quitar acentos
+         // quitar acentos
             cmd = cmd.replace("á", "a");
             cmd = cmd.replace("jehová", "jehova");
             cmd = cmd.replace("é", "e");
@@ -205,58 +217,292 @@ console.log(cmd);
             cmd = cmd.replace("ì", "i");
             cmd = cmd.replace("ò", "o");
             cmd = cmd.replace("ù", "u");
-        console.log(cmd);
+            console.log(cmd);
         
             if (cmd.indexOf("hoy") > -1) {
-                respuesta = "almacenando en la agenda para hoy";
+                respuesta = "almacenando en la agenda para hoy, ¿a que hora quieres que te lo recuerde?, o prefieres que te lo recuerde todo el dia?";
                 whenrmb = hoy;
                 localStorage.setItem("cuandorec", whenrmb)
                 console.log(whenrmb);
-            }else if (cmd.indexOf("mañana") > -1) {
+            }else if (cmd.indexOf("mañana") > -1 || cmd.indexOf('dentro de 1') > -1) {
                 whenrmb = hoy+1;
                 localStorage.setItem("cuandorec", whenrmb)
                 console.log(whenrmb);
-                respuesta = "almacenando en la agenda para mañana";
+                respuesta = "almacenando en la agenda para mañana, ¿a que hora quieres que te lo recuerde?, o prefieres que te lo recuerde todo el dia?";
             }else if (cmd.indexOf("pasado mañana") > -1 || cmd.indexOf('dentro de 2') > -1) {
                 whenrmb = hoy+2;
                 localStorage.setItem("cuandorec", whenrmb)
                 console.log(whenrmb);
-                respuesta = "almacenando en la agenda para pasado mañana";
+                respuesta = "almacenando en la agenda para pasado mañana, ¿a que hora quieres que te lo recuerde?, o prefieres que te lo recuerde todo el dia?";
             }
-            else if (cmd.indexOf("en 4 dias") > -1 || cmd.indexOf('dentro de 4') > -1) {
+            else if (cmd.indexOf("4 dias") > -1 || cmd.indexOf('dentro de 4') > -1 || cmd.indexOf('pos pasado mañana') > -1) {
                 whenrmb = hoy+3;
                 localStorage.setItem("cuandorec", whenrmb)
                 console.log(whenrmb);
-                respuesta = "almacenando en la agenda para dentro de 3 dias";
+                respuesta = "almacenando en la agenda para dentro de 3 dias, ¿a que hora quieres que te lo recuerde?, o prefieres que te lo recuerde todo el dia?";
             }
-            else if (cmd.indexOf("en 5 dias") > -1 || cmd.indexOf('dentro de 5') > -1) {
+            else if (cmd.indexOf("5 dias") > -1 || cmd.indexOf('dentro de 5') > -1) {
                 whenrmb = hoy+4;
                 localStorage.setItem("cuandorec", whenrmb)
                 console.log(whenrmb);
-                respuesta = "almacenando en la agenda para dentro de 4 dias";
+                respuesta = "almacenando en la agenda para dentro de 4 dias, ¿a que hora quieres que te lo recuerde?, o prefieres que te lo recuerde todo el dia?";
             }
             else if (cmd.indexOf("en 6 dias") > -1 || cmd.indexOf('dentro de 6') > -1) {
                 whenrmb = hoy+5;
                 localStorage.setItem("cuandorec", whenrmb)
                 console.log(whenrmb);
-                respuesta = "almacenando en la agenda para dentro de cinco dias";
+                respuesta = "almacenando en la agenda para dentro de cinco dias, ¿a que hora quieres que te lo recuerde?, o prefieres que te lo recuerde todo el dia?";
             }
-            else if (cmd.indexOf("en una semana") > -1 || cmd.indexOf('dentro de una semana') > -1) {
+            else if (cmd.indexOf("en una semana") > -1 || cmd.indexOf('dentro de una semana') > -1 || cmd.indexOf('7 dias') > -1) {
                 whenrmb = hoy+6;
                 localStorage.setItem("cuandorec", whenrmb)
                 console.log(whenrmb);
-                respuesta = "almacenando en la agenda para dentro de una semana";
+                respuesta = "almacenando en la agenda para dentro de una semana, ¿a que hora quieres que te lo recuerde?, o prefieres que te lo recuerde todo el dia?";
+            }
+            else{
+                respuesta = "no e reconocido el dia, pruebe agendar de nuevo y sea directo, soy una asistente virtual, no necesito modestias."
             }
 
 
             speechSynthesis.speak(new SpeechSynthesisUtterance(respuesta));
-            micro.setAttribute("src","img/bxs-microphone-off.svg")
             console.log(respuesta);
-            document.getElementById("lith").innerHTML = 'LITH';
             document.getElementById("textodicho").innerHTML = username+":"+frase;
             document.getElementById("textoescuchado").innerHTML = "LITH:"+respuesta;
-            micro.classList.remove("circulo");
-         }
+         
+            new SpeechSynthesisUtterance(respuesta).onend = recognitionHoradere.start()
+            
+            
+            recognitionHoradere.onresult = (event) => {
+                const results = event.results;
+                const frase = results[results.length - 1][0].transcript;
+                var cmd = frase;
+                cmd = cmd.toLowerCase();
+                var respuesta = "";
+                micro.setAttribute("src","img/bxs-microphone-off.svg")
+                 document.getElementById("lith").innerHTML = 'LITH';
+                 document.getElementById("textodicho").innerHTML = username+":"+frase;
+                 document.getElementById("textoescuchado").innerHTML = "LITH:"+respuesta;
+                 micro.classList.remove("circulo");
+            // quitar acentos y puntos
+                cmd = cmd.replace(",", "");
+                cmd = cmd.replace(".", "");
+                cmd = cmd.replace("b", "");
+                cmd = cmd.replace("c", "");
+                cmd = cmd.replace("f", "");
+                cmd = cmd.replace("g", "");
+                cmd = cmd.replace("h", "");
+                cmd = cmd.replace("i", "");
+                cmd = cmd.replace("j", "");
+                cmd = cmd.replace("k", "");
+                cmd = cmd.replace("l", "");
+                cmd = cmd.replace("o", "");
+                cmd = cmd.replace("p", "");
+                cmd = cmd.replace("q", "")
+                cmd = cmd.replace("s", "");
+                cmd = cmd.replace("u", "");
+                cmd = cmd.replace("v", "");
+                cmd = cmd.replace("w", "");
+                cmd = cmd.replace("x", "");
+                cmd = cmd.replace("y", "");
+                cmd = cmd.replace("z", "");
+                cmd = cmd.replace("á", "a");    
+                cmd = cmd.replace("jehová", "jehova");
+                cmd = cmd.replace("é", "e");
+                cmd = cmd.replace("í", "i");
+                cmd = cmd.replace("ó", "o");
+                cmd = cmd.replace("ú", "u");
+                cmd = cmd.replace("à", "a");
+                cmd = cmd.replace("è", "e");
+                cmd = cmd.replace("ì", "i");
+                cmd = cmd.replace("ò", "o");
+                cmd = cmd.replace("ù", "u");
+                cmd = cmd.replace("una", "1");
+                cmd = cmd.replace("dos", "2");
+                cmd = cmd.replace("tres", "3");
+                cmd = cmd.replace("cuatro", "4");
+                cmd = cmd.replace("cinco", "5");
+                cmd = cmd.replace("seis", "6");
+                cmd = cmd.replace("siete", "7");
+                cmd = cmd.replace("ocho", "8");
+                cmd = cmd.replace("nueve", "9");
+                cmd = cmd.replace("diez", "10");
+                cmd = cmd.replace("once", "11");
+                cmd = cmd.replace("doce", "12");
+                cmd = cmd.replace("00", "");
+                cmd = cmd.replace(":", "");
+                cmd = cmd.replace("de la", "");
+                cmd = cmd.replace("por favor", "");
+                cmd = cmd.replace("recuerdamelo", "");
+                cmd = cmd.replace("en la", "");
+                cmd = cmd.replace("por la", "");
+                
+            console.log(cmd);
+            if (cmd.indexOf("todo el dia") > -1) {
+                whenrmb = "all day";
+                localStorage.setItem("hcuandorec", whenrmb);
+                console.log(whenrmb);
+                respuesta = "de acuerdo te lo recordare hasta que se acabe el dia ";
+            }
+            else if (cmd.indexOf("1") > -1 && cmd.indexOf("mañana")  > -1  || cmd.indexOf('1') > -1 && cmd.indexOf("am")  > -1 ) {
+                whenrmb = "1";
+                localStorage.setItem("hcuandorec", whenrmb);
+                console.log(whenrmb);
+                respuesta = "de acuerdo te lo recordare a la una de la mañana";
+            }
+            else if (cmd.indexOf("2") > -1 && cmd.indexOf("mañana")  > -1 || cmd.indexOf('2') > -1 && cmd.indexOf("am")  > -1 ) {
+                whenrmb = "2";
+                localStorage.setItem("hcuandorec", whenrmb);
+                console.log(whenrmb);
+                respuesta = "de acuerdo te lo recordare a las 2 de la mañana"; 
+            }
+            else if (cmd.indexOf("3") > -1 && cmd.indexOf("mañana")  > -1  || cmd.indexOf('3') > -1 && cmd.indexOf("am")  > -1 ) {
+                whenrmb = "3";
+                localStorage.setItem("hcuandorec", whenrmb);
+                console.log(whenrmb);
+                respuesta = "de acuerdo te lo recordare a las 3 de la mañana"; 
+            }
+            else if (cmd.indexOf("4") > -1 && cmd.indexOf("mañana")  > -1  || cmd.indexOf('4') > -1 && cmd.indexOf("am")  > -1 ) {
+                whenrmb = "4";
+                localStorage.setItem("hcuandorec", whenrmb);
+                console.log(whenrmb);
+                respuesta = "de acuerdo te lo recordare a las 4 de la mañana"; 
+            }
+            else if (cmd.indexOf("5") > -1 && cmd.indexOf("mañana")  > -1  || cmd.indexOf('5') > -1 && cmd.indexOf("am")  > -1 ) {
+                whenrmb = "5";
+                localStorage.setItem("hcuandorec", whenrmb);
+                console.log(whenrmb);
+                respuesta = "de acuerdo te lo recordare a las 5 de la mañana"; 
+            }
+            else if (cmd.indexOf("6") > -1 && cmd.indexOf("mañana")  > -1  || cmd.indexOf('6') > -1 && cmd.indexOf("am")  > -1 ) {
+                whenrmb = "6";
+                localStorage.setItem("hcuandorec", whenrmb);
+                console.log(whenrmb);
+                respuesta = "de acuerdo te lo recordare a las 6 de la mañana"; 
+            }
+            else if (cmd.indexOf("7") > -1 && cmd.indexOf("mañana")  > -1  || cmd.indexOf('7') > -1 && cmd.indexOf("am")  > -1 ) {
+                whenrmb = "7";
+                localStorage.setItem("hcuandorec", whenrmb);
+                console.log(whenrmb);
+                respuesta = "de acuerdo te lo recordare a las 7 de la mañana"; 
+            }
+            else if (cmd.indexOf("8") > -1 && cmd.indexOf("mañana")  > -1  || cmd.indexOf('8') > -1 && cmd.indexOf("am")  > -1 ) {
+                whenrmb = "8";
+                localStorage.setItem("hcuandorec", whenrmb);
+                console.log(whenrmb);
+                respuesta = "de acuerdo te lo recordare a las 8 de la mañana"; 
+            }
+            else if (cmd.indexOf("9") > -1 && cmd.indexOf("mañana")  > -1  || cmd.indexOf('9') > -1 && cmd.indexOf("am")  > -1 ) {
+                whenrmb = "9";
+                localStorage.setItem("hcuandorec", whenrmb);
+                console.log(whenrmb);
+                respuesta = "de acuerdo te lo recordare a las 9 de la mañana"; 
+            }
+            else if (cmd.indexOf("10") > -1 && cmd.indexOf("mañana")  > -1  || cmd.indexOf('10') > -1 && cmd.indexOf("am")  > -1 ) {
+                whenrmb = "10";
+                localStorage.setItem("hcuandorec", whenrmb);
+                console.log(whenrmb);
+                respuesta = "de acuerdo te lo recordare a las 10 de la mañana"; 
+            }
+            else if (cmd.indexOf("11") > -1 && cmd.indexOf("mañana")  > -1  || cmd.indexOf('11') > -1 && cmd.indexOf("am")  > -1 ) {
+                whenrmb = "11";
+                localStorage.setItem("hcuandorec", whenrmb);
+                console.log(whenrmb);
+                respuesta = "de acuerdo te lo recordare a las 11 de la mañana"; 
+            }
+            else if (cmd.indexOf("12")  > -1 && cmd.indexOf("tarde")  > -1  || cmd.indexOf('12') > -1 && cmd.indexOf("pm")  > -1 ) {
+                whenrmb = "12";
+                localStorage.setItem("hcuandorec", whenrmb);
+                console.log(whenrmb);
+                respuesta = "de acuerdo te lo recordare a las 12 de la tarde"; 
+            }
+            else if (cmd.indexOf("1")  > -1 && cmd.indexOf("tarde")  > -1  || cmd.indexOf('1') > -1 && cmd.indexOf("pm")  > -1 ) {
+                whenrmb = "13";
+                localStorage.setItem("hcuandorec", whenrmb);
+                console.log(whenrmb);
+                respuesta = "de acuerdo te lo recordare a la una de la tarde"; 
+            }
+            else if (cmd.indexOf("2")  > -1 && cmd.indexOf("tarde")  > -1  || cmd.indexOf('2') > -1 && cmd.indexOf("pm")  > -1 ) {
+                whenrmb = "14";
+                localStorage.setItem("hcuandorec", whenrmb);
+                console.log(whenrmb);
+                respuesta = "de acuerdo te lo recordare a las 2 de la tarde"; 
+            }
+            else if (cmd.indexOf("3")  > -1 && cmd.indexOf("tarde")  > -1  || cmd.indexOf('3') > -1 && cmd.indexOf("pm")  > -1 ) {
+                whenrmb = "15";
+                localStorage.setItem("hcuandorec", whenrmb);
+                console.log(whenrmb);
+                respuesta = "de acuerdo te lo recordare a las 3 de la tarde"; 
+            }
+            else if (cmd.indexOf("4")  > -1 && cmd.indexOf("tarde")  > -1  || cmd.indexOf('4') > -1 && cmd.indexOf("pm")  > -1 ) {
+                whenrmb = "16";
+                localStorage.setItem("hcuandorec", whenrmb);
+                console.log(whenrmb);
+                respuesta = "de acuerdo te lo recordare a las 4 de la tarde"; 
+            }
+            else if (cmd.indexOf("5")  > -1 && cmd.indexOf("tarde")  > -1  || cmd.indexOf('5') > -1 && cmd.indexOf("pm")  > -1 ) {
+                whenrmb = "17";
+                localStorage.setItem("hcuandorec", whenrmb);
+                console.log(whenrmb);
+                respuesta = "de acuerdo te lo recordare a las 5 de la tarde"; 
+            }
+            else if (cmd.indexOf("6")  > -1 && cmd.indexOf("tarde")  > -1  || cmd.indexOf('6') > -1 && cmd.indexOf("pm")  > -1 ) {
+                whenrmb = "18";
+                localStorage.setItem("hcuandorec", whenrmb);
+                console.log(whenrmb);
+                respuesta = "de acuerdo te lo recordare a las 6 de la tarde"; 
+            }
+            else if (cmd.indexOf("7")  > -1 && cmd.indexOf("tarde")  > -1  || cmd.indexOf('7') > -1 && cmd.indexOf("pm")  > -1 ) {
+                whenrmb = "19";
+                localStorage.setItem("hcuandorec", whenrmb);
+                console.log(whenrmb);
+                respuesta = "de acuerdo te lo recordare a las 7 de la noche"; 
+            }
+            else if (cmd.indexOf("8")  > -1 && cmd.indexOf("tarde")  > -1  || cmd.indexOf('8') > -1 && cmd.indexOf("pm")  > -1 ) {
+                whenrmb = "20";
+                localStorage.setItem("hcuandorec", whenrmb);
+                console.log(whenrmb);
+                respuesta = "de acuerdo te lo recordare a las 8 de la noche"; 
+            }
+            else if (cmd.indexOf("9")  > -1 && cmd.indexOf("tarde")  > -1  || cmd.indexOf('9') > -1 && cmd.indexOf("pm")  > -1 ) {
+                whenrmb = "21";
+                localStorage.setItem("hcuandorec", whenrmb);
+                console.log(whenrmb);
+                respuesta = "de acuerdo te lo recordare a las 9 de la noche"; 
+            }
+            else if (cmd.indexOf("10")  > -1 && cmd.indexOf("tarde")  > -1  || cmd.indexOf('10') > -1 && cmd.indexOf("pm")  > -1 ) {
+                whenrmb = "22";
+                localStorage.setItem("hcuandorec", whenrmb);
+                console.log(whenrmb);
+                respuesta = "de acuerdo te lo recordare a las 10 de la noche"; 
+            }
+            else if (cmd.indexOf("11")  > -1 && cmd.indexOf("tarde")  > -1  || cmd.indexOf('11') > -1 && cmd.indexOf("pm")  > -1 ) {
+                whenrmb = "23";
+                localStorage.setItem("hcuandorec", whenrmb);
+                console.log(whenrmb);
+                respuesta = "de acuerdo te lo recordare a las 11 de la noche"; 
+            }
+            else if (cmd.indexOf("12")  > -1  && cmd.indexOf("mañana")  > -1  || cmd.indexOf('12') > -1 && cmd.indexOf("am")  > -1 ) {
+                whenrmb = "24";
+                localStorage.setItem("hcuandorec", whenrmb);
+                console.log(whenrmb);
+                respuesta = "de acuerdo te lo recordare a las 12 de la mañana"; 
+            }
+            else {
+                respuesta = "no he reconocido la hora, no se olvide de especificar la hora y si es pm o am, intente agendar de nuevo"
+            }
+
+            
+    
+                speechSynthesis.speak(new SpeechSynthesisUtterance(respuesta));
+                console.log(respuesta);
+                document.getElementById("textodicho").innerHTML = username+":"+frase;
+                document.getElementById("textoescuchado").innerHTML = "LITH:"+respuesta;
+            }
+        
+        }
+
+
+         
     }   
     
                     //modos y extras de Lith 
@@ -266,9 +512,10 @@ console.log(cmd);
         respuesta = "¡Ok"+username+"! iniciando el modo escritura.";
 
     }
-    else if (cmd.indexOf("tema") > -1 || cmd.indexOf('cambar a tema') > -1 ) {
+    else if (cmd.indexOf("tema") > -1 || cmd.indexOf('cambia a tema') > -1 ) {
         teme = cmd;
         teme = teme.replace("tema", "")
+        teme = teme.replace("cambia a tema", "")
         localStorage.setItem("temas",teme)
         tema = localStorage.getItem("temas");
         respuesta = "cambiando al tema visuál"+tema+" si no se aplica de inmediato, pruebe recargar la pagina";
@@ -326,17 +573,24 @@ console.log(cmd);
        respuesta = "Aparentemente no tengo respuesta a tu comando, asi que lo buscare en google";
        window.open('https://www.google.com/search?q='+cmd);  
     }
-    
-    // Bot Habla
     speechSynthesis.speak(new SpeechSynthesisUtterance(respuesta));
-    micro.setAttribute("src","img/bxs-microphone-off.svg")
     console.log(respuesta);
-    document.getElementById("lith").innerHTML = 'LITH';
     document.getElementById("textodicho").innerHTML = username+":"+frase;
     document.getElementById("textoescuchado").innerHTML = "LITH:"+respuesta;
+}
+
+recognition.onend = function () {
+    micro.setAttribute("src","img/bxs-microphone-off.svg")
+    document.getElementById("lith").innerHTML = 'LITH';
     micro.classList.remove("circulo");
-    
-
-
-
+}
+recognitionDiadere.onend = function () {
+    micro.setAttribute("src","img/bxs-microphone-off.svg")
+    document.getElementById("lith").innerHTML = 'LITH';
+    micro.classList.remove("circulo");
+}
+recognitionHoradere.onend = function () {
+    micro.setAttribute("src","img/bxs-microphone-off.svg")
+    document.getElementById("lith").innerHTML = 'LITH';
+    micro.classList.remove("circulo");
 }
