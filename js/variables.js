@@ -1,7 +1,8 @@
 var nombre = "Anonimo";
 var haynombre = "no";
-
+var firstime = "si";
 var whenrmb;
+var tuto = "Bienvenido usuario.. Yo soy LITH, una asistente virtual de navegacion, estoy completamente desarrollada para aligerar su experiencia de navegacion y mejorar su eficiencia en trabajo, soy capaz de hacer busquedas en varios sitios webs y habrir redes sociales y chats.. puedo hacer recordatorios hasta para una semana, y muchas mas cosas.. en palabras sencillas, soy una iA echa para servirle, si quiere usarme con la mejor eficiencia le recomiendo ver la pequeña guia de comandos de LITH para ello solo presione el boton que tiene mi nombre y diga: lista de comandos, o , guia de comandos.. recuerde. Lith es la asistenta virtual echa completamente para ALIGERAR el trabajo. si tiene algun problema o quiere contactar con el servicio solo digamelo con el comando: contactar con el soporte, o, buscar soporte, para que este mensaje no vuelva a aparecer solo diga: desactivar tutorial, o quitar tutorial , ¿Que esperamos para empezar a aligerar su navegacion?, presione el boton y ¡empezemos! ";
 const fecha = new Date();
 var hoy = fecha.getDate();
 console.log(hoy);
@@ -29,12 +30,7 @@ var chistes = [
     " Abuelo, ¿por qué estás delante del ordenador con los ojos cerrados?.. Es que Windows me ha dicho que cierre las pestañas.",
     "Hola. soy paraguayo y quiero pedirle la mano de su hija para casarme con ella.. ¿Para qué?. Paraguayo."
 ];
-var respuestarandom = [
-    "De acuerdo, empezare a buscar el.. espera.. ¿que me dijiste?, no estaba prestando atencion.. es que vi ese foco de luz que me dejo loca...",
-    "Aparentemente no he entendido ni pio de lo que me acabaz de decir, que te parece si nos calmamos y antes de que me insultes, pruebas a repetir logicamente lo que acabas de decir.",
-    "1.. 2 3.. ¿cuanto mas tengo que contar para que veas que no entendi lo que me dijiste?",
-    "¡Ok! buscando AAAAAAA acabo de ver una mosca.. espera.. no tengo acceso a la camara.. ¿entonces como rayos vi la mosca?"
-];
+
 
 
 

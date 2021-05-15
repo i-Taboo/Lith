@@ -1,5 +1,6 @@
 let username = localStorage.getItem("name");
 var vsdtxt = localStorage.getItem("visualizaciondetexto");
+let tutorial = localStorage.getItem("tutorial");
 let namecheck = localStorage.getItem("haynombre");
 let remember = localStorage.getItem("remember");
 let recuh = localStorage.getItem("recuh")
@@ -8,19 +9,25 @@ let today = JSON.stringify(hoy);
 tema = localStorage.getItem("temas");
 console.log(username);
 console.log(vsdtxt);
+// quitar tutorial 
+if (tutorial === null) {
+speechSynthesis.speak(new SpeechSynthesisUtterance(tuto));
+}else if (tutorial === "no") {
+    
+}
 // greetings
 let numerorandom3 = Math.floor(Math.random() * 6);
     var bienvenidas = [
     "Bienvenido"+username,
-    "¡Que susto me has dado"+username+"! No vi que estabas alli, espera, no tengo acceso a la camara entonces este susto no tiene sentido",
+    "Es hora de emplear mis conocimientos ya llego "+username,
     "Inserte mensaje de bienvenida generico",
     "9648. 9649, ah,"+username+" bienvenido, solo estaba contando los codigos necesarios para ser un niño de verdad",
-    "¿¡Es un ser!?, ¿¡Es un gigante!?, ah es"+username+" bienvenido"+
+    "Mis codigos me indican que alguien muy guapo esta cerca, ah hola"+username+", con razon",
     "¿En que trabajaremos el dia de hoy?"
 ]
-// if (namecheck.indexOf("si") > -1) {
-//     speechSynthesis.speak(new SpeechSynthesisUtterance(bienvenidas[numerorandom3]));
-// }
+if (namecheck.indexOf("si") > -1 && whenr !== today) {
+    speechSynthesis.speak(new SpeechSynthesisUtterance(bienvenidas[numerorandom3]));
+}
 // base de configuraciones
     //   visualizacion de texto
     if (vsdtxt.indexOf("1") > -1) {

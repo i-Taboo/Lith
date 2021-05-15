@@ -19,56 +19,47 @@ recognition.onresult = (event) => {
     cmd = cmd.replace("ò", "o");
     cmd = cmd.replace("ù", "u");
 console.log(cmd);
-    
-
     micro.removeAttribute('src','img/bxs-microphone.svg');
-   
-    
+
     //comandos:
 
     // comandos interactivos
-    
-    if (cmd.indexOf('hola') > -1) {
+    if (cmd.indexOf('hola') === 0 || cmd.indexOf('que onda') > -1) {
         respuesta = 'Hola como estas';
     }
-    else if (cmd.indexOf('como estas') > -1) {
-        respuesta = '¡Muy bien! ¡Gracias por preguntar!, ¿Y tu?';
+    else if (cmd.indexOf('como estas') > -1 || cmd.indexOf('que tal estas') > -1  || cmd.indexOf('como te encuentras') > -1  || cmd.indexOf('como andas') > -1) {
+        respuesta = '¡Muy bien! ¡Gracias por preguntar';
     } 
-    else if (cmd.indexOf('mal') > -1 && cmd.indexOf("Me") >-1 || cmd.indexOf('mal.') > -1){
-        respuesta = 'Oh, como es posible que alguien como tu se pueda encontrar mal?';
-    }
-    else if (cmd.indexOf('bien') > -1 && cmd.indexOf("Me") >-1 || cmd.indexOf('bien.') > -1) {
-        respuesta = '¡Me alegro bastante de que estes bien!';
-    }
-    else if (cmd.indexOf('mi nombre es') > -1) {
+    else if (cmd.indexOf('mi nombre es') > -1 || cmd.indexOf('me llamo') > -1){
         nombre = cmd;
         nombre = nombre.replace("mi nombre es", "");
+        nombre = nombre.replace("me llamo", "");
         nombre = nombre.replace(".", "");
         haynombre = "si";
         localStorage.setItem("haynombre", haynombre)
         localStorage.setItem("name",(nombre));
         respuesta = 'Mucho gusto'+nombre+ ' yo soy Lith';
     }
-    else if (cmd. indexOf('quien eres') > -1){
+    else if (cmd. indexOf('quien eres') > -1  || cmd.indexOf('que eres') > -1 || cmd.indexOf('presentate') > -1){
         respuesta = "Soy un asistente por voz echo completamente en Html, Javascript y Css, y mi nombre es Lith, existo nada mas para ayudar y cumplir ciertas tareas"
     }
-    else if (cmd. indexOf("mi nombre") > -1){
+    else if (cmd. indexOf("mi nombre") > -1  || cmd.indexOf('como me llamo') > -1){
         respuesta = "Tu nombre es "+username+" ¿Se te ha olvidado?"
     }
-    else if (cmd.indexOf('di un chiste') > -1 || cmd.indexOf('cuenta un chiste') > -1) {
+    else if (cmd.indexOf('di un chiste') > -1 || cmd.indexOf('cuenta un chiste') > -1  || cmd.indexOf('tira un chiste') > -1  || cmd.indexOf('sacate un chiste') > -1) {
         respuesta = chistes[numerorandom];
         repitechiste = chistes; 
      }
             // else if (cmd. indexOf("cuentalo de nuevo") > -1 || cmd. indexOf("dilo de nuevo") > -1) {
             //    respuesta = repitechiste; 
             // }
-     else if (cmd.indexOf("repite despues de mi") > -1) {
+     else if (cmd.indexOf("repite despues de mi") > -1 || cmd.indexOf('di despues de mi') === 0) {
         repetir = cmd;
         repetir = repetir.replace("repite despues de mi","");
         respuesta = repetir;
         repetirdenuevo = repetir;
     }
-            else if (cmd.indexOf("repite de nuevo") === 0 || cmd. indexOf("repite eso") === 0) {
+            else if (cmd.indexOf("repite de nuevo") === 0 || cmd. indexOf("repite eso") === 0 || cmd.indexOf('dilo de nuevo') > -1 ) {
              respuesta = repetirdenuevo;   
             }
 
@@ -76,20 +67,29 @@ console.log(cmd);
 
     //comandos de utilidades
                     //configuracion de usuario
-    else if (cmd.indexOf("desactiva la visualizacion de texto") > -1) {
+    else if (cmd.indexOf("desactiva la visualizacion de texto") > -1 || cmd.indexOf('quita la visualizacion de texto') > -1 ) {
         vdtxt = 1;
         document.getElementById("cuadrotexto").classList.add("oculto2");
         localStorage.setItem("visualizaciondetexto",(vdtxt));
         respuesta = "Visualizaciòn de texto desactivada correctamente"
     }
-    else if (cmd.indexOf("activa la visualizacion de texto") > -1) {
+    else if (cmd.indexOf("activa la visualizacion de texto") > -1 || cmd.indexOf('pon la visualizacion de texto') > -1 ) {
         vdtxt = 0;
         document.getElementById("cuadrotexto").classList.remove("oculto2");
         localStorage.setItem("visualizaciondetexto", (vdtxt));
         respuesta = "Visualizaciòn de texto activada correctamente"
     }
+    if (cmd.indexOf('quitar tutorial') === 0 || cmd.indexOf('desactivar tutorial') > -1) {
+        firstime = "no";
+        localStorage.setItem("tutorial", firstime);
+        respuesta = 'tutorial desactivado';
+    }
                       
                     //buscar en diversas plataformas
+    else if (cmd. indexOf('abrir guia') > -1 || cmd.indexOf('iniciar guia') > -1 || cmd.indexOf('ver guia') > -1){
+        // window.open('https://www.google.com/search?q='+url);   
+        respuesta = "por ahora la guia no esta disponible, lamento las molestias"
+    }
     else if (cmd. indexOf('busca en google') > -1){
         url = cmd;
         url = url.replace("busca en google", "");
@@ -116,27 +116,34 @@ console.log(cmd);
         window.open('https://www.facebook.com/marketplace/103740209665322/search/?query='+url);   
     }
                     //habrir aplicaciones y redes sociales
-
-    else if (cmd.indexOf("abrir whatsapp") > -1 || cmd.indexOf('abre whatsapp') > -1){
+    else if (cmd.indexOf("abrir google") > -1 || cmd.indexOf('abre google') > -1 || cmd.indexOf('busca google') > -1 ){
+        window.open('https://google.com/'); 
+        respuesta = "¡Ok"+username+"! Abriendo Whatsapp Web.";
+    }                
+    else if (cmd.indexOf("abrir youtube") > -1 || cmd.indexOf('abre youtube') > -1 || cmd.indexOf('busca youtube') > -1 ){
+        window.open('https://www.youtube.com/'); 
+        respuesta = "¡Ok"+username+"! Abriendo Whatsapp Web.";
+    }
+    else if (cmd.indexOf("abrir whatsapp") > -1 || cmd.indexOf('abre whatsapp') > -1 || cmd.indexOf('busca whatsapp') > -1 ){
         window.open('https://web.whatsapp.com/'); 
         respuesta = "¡Ok"+username+"! Abriendo Whatsapp Web.";
     }
-    else if (cmd.indexOf("abrir facebook") > -1 || cmd.indexOf('abre facebook') > -1){
+    else if (cmd.indexOf("abrir facebook") > -1 || cmd.indexOf('abre facebook') > -1 || cmd.indexOf('busca facebook') > -1 ){
         window.open('https://www.facebook.com/'); 
         respuesta = "¡Ok"+username+"! Abriendo Facebook.";
 
     }
-    else if (cmd.indexOf("abrir instagram") > -1 || cmd.indexOf('abre instagram') > -1){
+    else if (cmd.indexOf("abrir instagram") > -1 || cmd.indexOf('abre instagram') > -1 || cmd.indexOf('busca instagram') > -1 ){
         window.open('https://www.instagram.com/'); 
         respuesta = "¡Ok"+username+"! Abriendo Instagram.";
 
     }
-    else if (cmd.indexOf("abrir twitter") > -1 || cmd.indexOf('abre twitter') > -1){
+    else if (cmd.indexOf("abrir twitter") > -1 || cmd.indexOf('abre twitter') > -1 || cmd.indexOf('busca twitter') > -1 ){
         window.open('https://twitter.com/?lang=es'); 
         respuesta = "¡Ok"+username+"! Abriendo Twitter.";
 
     }
-    else if (cmd.indexOf("abrir discord") > -1 || cmd.indexOf('abre discord') > -1) {
+    else if (cmd.indexOf("abrir discord") > -1 || cmd.indexOf('abre discord') > -1 || cmd.indexOf('busca discord') > -1 ) {
         window.open('https://discord.com/app'); 
         respuesta = "¡Ok"+username+"! Abriendo Discord.";
     }
@@ -254,12 +261,12 @@ console.log(cmd);
     
                     //modos y extras de Lith 
     
-    else if (cmd.indexOf("modo escritura") > -1){
+    else if (cmd.indexOf("modo escritura") > -1 || cmd.indexOf('modo escribir') > -1 || cmd.indexOf('modo voz a texto') > -1 ){
         meta.setAttribute("content", "2;url=voz a texto.html");
         respuesta = "¡Ok"+username+"! iniciando el modo escritura.";
 
     }
-    else if (cmd.indexOf("tema") === 0) {
+    else if (cmd.indexOf("tema") > -1 || cmd.indexOf('cambar a tema') > -1 ) {
         teme = cmd;
         teme = teme.replace("tema", "")
         localStorage.setItem("temas",teme)
@@ -316,7 +323,8 @@ console.log(cmd);
     
 // buscar lo que el usuario diga sin necesidad de google
    if (respuesta === ""){
-       respuesta = respuestarandom[numerorandom2];
+       respuesta = "Aparentemente no tengo respuesta a tu comando, asi que lo buscare en google";
+       window.open('https://www.google.com/search?q='+cmd);  
     }
     
     // Bot Habla
