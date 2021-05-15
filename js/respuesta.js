@@ -193,8 +193,12 @@ console.log(cmd);
          recordar = "no se te olvide que"+recuerdo;
          respuesta = "de acuerdo, entre hoy y en una semana cuando quieres que te lo recuerde?";
          localStorage.setItem("remember",recordar);
-         new SpeechSynthesisUtterance(respuesta).onend = recognitionDiadere.start()
-    
+
+         function nexrecognition() {
+            new SpeechSynthesisUtterance(respuesta).onend = recognitionDiadere.start()
+
+        }
+        setTimeout(nexrecognition,4600);
 
          recognitionDiadere.onresult = (event) => {
             const results = event.results;
@@ -270,8 +274,15 @@ console.log(cmd);
             console.log(respuesta);
             document.getElementById("textodicho").innerHTML = username+":"+frase;
             document.getElementById("textoescuchado").innerHTML = "LITH:"+respuesta;
-         
-            new SpeechSynthesisUtterance(respuesta).onend = recognitionHoradere.start()
+            
+            
+            function nexrecognition2() {
+                new SpeechSynthesisUtterance(respuesta).onend = recognitionHoradere.start()
+  
+            }
+            setTimeout(nexrecognition2,4600);
+
+  
             
             
             recognitionHoradere.onresult = (event) => {
