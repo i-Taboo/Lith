@@ -97,9 +97,11 @@ console.log(cmd);
         window.open('https://www.facebook.com/Para.que.me.lees/');   
         respuesta = "de acuerdo, redirigiendo al contacto de soporte, lamento las molestias"
     }
-    else if (cmd. indexOf('busca en google') > -1 || cmd.indexOf('busca') > -1 ){
+    else if (cmd. indexOf('busca en google') > -1 || cmd.indexOf('busca') > -1 || cmd.indexOf('buscar en google') > -1){
         url = cmd;
         url = url.replace("busca en google", "");
+        url = url.replace("buscar en google", "");
+        url = url.replace("busca", "");
         respuesta = "¡Ok"+username+"! buscando en google"+url;
         window.open('https://www.google.com/search?q='+url);   
     }
