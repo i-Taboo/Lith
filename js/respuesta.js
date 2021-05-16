@@ -189,6 +189,7 @@ console.log(cmd);
          recuerdo = recuerdo.replace("tengo", "tienes");
          recuerdo = recuerdo.replace("mi", "tu");
          recuerdo = recuerdo.replace("yo", "tu");
+         recuerdo = recuerdo.replace("a ti", "a mi");
          recordar = "no se te olvide que"+recuerdo;
          respuesta = "de acuerdo, entre hoy y en una semana cuando quieres que te lo recuerde?";
          localStorage.setItem("remember",recordar);
