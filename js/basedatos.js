@@ -27,7 +27,7 @@ let numerorandom3 = Math.floor(Math.random() * 6);
     "Mis codigos me indican que alguien muy guapo esta cerca, ah hola"+username+", con razon",
     "¿En que trabajaremos el dia de hoy?"
 ]
-if (namecheck.indexOf("si") > -1 && whenr !== today) {
+if (namecheck.indexOf("si") > -1) {
     speechSynthesis.speak(new SpeechSynthesisUtterance(bienvenidas[numerorandom3]));
 }
 // base de configuraciones
