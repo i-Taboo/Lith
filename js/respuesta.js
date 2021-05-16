@@ -280,7 +280,7 @@ console.log(cmd);
                 new SpeechSynthesisUtterance(respuesta).onend = recognitionHoradere.start()
   
             }
-            setTimeout(nexrecognition2,4600);
+            setTimeout(nexrecognition2,5400);
 
   
             
@@ -304,11 +304,8 @@ console.log(cmd);
                 cmd = cmd.replace("f", "");
                 cmd = cmd.replace("g", "");
                 cmd = cmd.replace("h", "");
-                cmd = cmd.replace("i", "");
                 cmd = cmd.replace("j", "");
                 cmd = cmd.replace("k", "");
-                cmd = cmd.replace("l", "");
-                cmd = cmd.replace("o", "");
                 cmd = cmd.replace("p", "");
                 cmd = cmd.replace("q", "")
                 cmd = cmd.replace("s", "");
