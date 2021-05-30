@@ -29,7 +29,7 @@ let numerorandom3 = Math.floor(Math.random() * 6);
 ]
 if (namecheck.indexOf("si") > -1) {
     speechSynthesis.speak(new SpeechSynthesisUtterance(bienvenidas[numerorandom3]));
-    animacion_hablar(this, 20);
+    // animacion_hablar(this, 20);
 }
 // base de configuraciones
     //   visualizacion de texto
