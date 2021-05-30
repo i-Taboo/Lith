@@ -9,6 +9,7 @@ body{
     background: linear-gradient(150deg, #74f3cd, #f96609, #Cea250);
     background-size: 400% 300%;
     animation: BgGradient 5s ease infinite;
+    
 }
 
 .theme_iron{
@@ -31,6 +32,8 @@ body{
     height: 70%;
     -webkit-filter: drop-shadow( 0px 1px 2px #000 );
     filter: drop-shadow( 0px 1px 2px #000 );
+
+
 }
 
 .ojo{
@@ -78,6 +81,8 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+        max-width: 55%;
+    max-height: 55%;
      
 }
 
@@ -233,12 +238,12 @@ body{
     }
     .ojo{
         height: 80%;
-        margin-left:-68% ;
-        margin-right:-68% ;
+        margin-left:-58% ;
+        margin-right:-58% ;
     }
     
     .voca{
-        margin-bottom: -35%;
+        margin-bottom: -40%;
         height: 100%;
     }
     .butons{
