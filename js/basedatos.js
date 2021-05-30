@@ -1,6 +1,6 @@
 let username = localStorage.getItem("name");
 var vsdtxt = localStorage.getItem("visualizaciondetexto");
-let tutorial = localStorage.getItem("tutorial");
+let tutorial = "no";
 let namecheck = localStorage.getItem("haynombre");
 let remember = localStorage.getItem("remember");
 let recuh = localStorage.getItem("recuh")
