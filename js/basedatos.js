@@ -29,6 +29,7 @@ let numerorandom3 = Math.floor(Math.random() * 6);
 ]
 if (namecheck.indexOf("si") > -1) {
     speechSynthesis.speak(new SpeechSynthesisUtterance(bienvenidas[numerorandom3]));
+    animacion_hablar(this, 20);
 }
 // base de configuraciones
     //   visualizacion de texto
@@ -74,7 +75,7 @@ switch (tema){
             break;
     case " naturaleza.":
         document.getElementById("cuerpo").classList.add("theme_natural");
-        startrecord.classList.remove("opacidad_menor");
+
         break;
         case " naturaleza":
             document.getElementById("cuerpo").classList.add("theme_natural");

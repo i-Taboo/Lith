@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg5"
+   sodipodi:docname="Lith_Face afk5.svg"
+   inkscape:version="1.1 (c68e22c387, 2021-05-23)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:snap-text-baseline="false"
+     inkscape:zoom="0.64"
+     inkscape:cx="600.78125"
+     inkscape:cy="589.84375"
+     inkscape:window-width="1680"
+     inkscape:window-height="987"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2" />
+  <g
+     inkscape:label="Capa 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <g
+       inkscape:label="Capa 1"
+       id="layer1-6">
+      <path
+         style="fill:#f4e3d7;stroke-width:0.690163"
+         d="m 118.0674,265.49276 c -10.7719,-1.65798 -23.354384,-8.20682 -34.197568,-15.98084 -7.602244,-5.45041 -20.591663,-20.49659 -27.281952,-29.85503 -2.663559,-3.72581 -4.842824,-7.02087 -4.842824,-7.32241 0,-0.3015 0.450533,3.26643 5.075666,4.14155 35.553557,6.7271 44.748648,6.59934 67.451478,8.67702 27.72327,2.53712 40.91898,-2.93378 70.96798,-8.48815 4.52393,-0.83622 9.12158,-4.59409 9.11855,-4.27495 -0.0129,1.3854 -8.44414,13.41744 -14.37331,19.87038 -12.27151,13.35546 -25.36623,24.33042 -39.40769,29.35328 -10.33226,3.696 -22.27014,5.45528 -32.51033,3.87915 z"
+         id="path5049-6"
+         sodipodi:nodetypes="ssssssscsss" />
+      <path
+         style="fill:#ffffff;stroke-width:0.450748"
+         d="m 77.700152,160.29934 c -1.566908,-1.47927 -3.710596,-6.26601 -5.074387,-11.33082 -8.043029,-29.87003 -6.601366,-91.289809 2.605418,-110.999496 3.155426,-6.755081 6.644266,-6.755081 9.799697,0 10.448406,22.367741 10.448406,96.023836 0,118.391576 -2.279076,4.87897 -4.863766,6.26771 -7.330728,3.93874 z"
+         id="path5815-6" />
+      <path
+         style="fill:#ffffff;stroke-width:0.465308"
+         d="m 162.73496,160.0572 c -1.61773,-1.52686 -3.83094,-6.4676 -5.23896,-11.69536 -8.30385,-30.83103 -6.81544,-94.226841 2.68992,-114.57064 3.25775,-6.972409 6.85973,-6.972409 10.11749,0 10.78724,23.087369 10.78724,99.11318 0,122.20055 -2.35298,5.03593 -5.02149,6.46935 -7.56845,4.06545 z"
+         id="path5815-3-2" />
+    </g>
+  </g>
+</svg>
