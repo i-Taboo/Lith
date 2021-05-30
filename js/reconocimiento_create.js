@@ -1,7 +1,9 @@
-const startrecord = document.getElementById("startrecord");
+const startrecord = document.body;
+let voca = document.getElementById("voca");
+let ojo1 = document.getElementById("ojo1");
+let ojo2 = document.getElementById("ojo2");
 
 document.body.addEventListener("click", () => {
-    startrecord.classList.add("dicipar_shadow");
     recognition.start();
 });
 
@@ -10,13 +12,12 @@ recognition.lang = 'es-ES';
 recognition.continuous = false;
 recognition.interResults = false;
 
-startrecord.addEventListener("click", () => {
-    startrecord.classList.add("dicipar_shadow");
-    recognition.start();
-});
+
 recognition.addEventListener("start", () => {
- startrecord.setAttribute("src","img/bx-circle_w.svg");
- startrecord.classList.add("circulo");
+ voca.setAttribute("src","img/bx-circle_w.svg");
+ voca.classList.add("circulo");
+ ojo1.classList.add("oculto")
+ ojo2.classList.add("oculto")
 
 })
 
@@ -25,8 +26,10 @@ recognitionDiadere.lang = 'es-ES';
 recognitionDiadere.continuous = false;
 recognitionDiadere.interResults = false;
 recognitionDiadere.addEventListener("start", () => {
-    startrecord.setAttribute("src","img/bx-circle_w.svg");
-    startrecord.classList.add("circulo");
+    voca.setAttribute("src","img/bx-circle_w.svg");
+    voca.classList.add("circulo");
+    ojo1.classList.add("oculto")
+    ojo2.classList.add("oculto")
 
 })
 
@@ -35,8 +38,10 @@ recognitionHoradere.lang = 'es-ES';
 recognitionHoradere.continuous = false;
 recognitionHoradere.interResults = false;
 recognitionHoradere.addEventListener("start", () => {
-    startrecord.setAttribute("src","img/bx-circle_w.svg");
-    startrecord.classList.add("circulo");
+    voca.setAttribute("src","img/bx-circle_w.svg");
+    voca.classList.add("circulo");
+    ojo1.classList.add("oculto")
+    ojo2.classList.add("oculto")
 })
 
 

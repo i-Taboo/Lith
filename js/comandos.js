@@ -259,8 +259,9 @@ function comandos(cmd, frase) {
        window.open('https://www.google.com/search?q='+cmd);  
     }
     let rmrmr = respuesta.length;
-    rmrmr = rmrmr / 4 ;
+    rmrmr = rmrmr / 4.9 ;
     new SpeechSynthesisUtterance(respuesta).onstart = animacion_hablar(this, rmrmr);
+
     
 }
 

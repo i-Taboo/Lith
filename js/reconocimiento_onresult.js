@@ -36,18 +36,24 @@ recognition.onresult = (event) => {
 }
 
     recognition.onend = function () {
-        startrecord.setAttribute("src","img/lith_face/Lith_Face normal.svg");
-        startrecord.classList.remove("circulo");
+        voca.setAttribute("src","img/lith_face/Lith_voca.svg");
+        ojo1.classList.remove("oculto");
+        ojo2.classList.remove("oculto");
+        voca.classList.remove("circulo");
         window.navigator.vibrate([55])
     }
     recognitionDiadere.onend = function () {
-        startrecord.setAttribute("src","img/lith_face/Lith_Face normal.svg");
-        startrecord.classList.remove("circulo");
+        voca.setAttribute("src","img/lith_face/Lith_voca.svg");
+        ojo1.classList.remove("oculto");
+        ojo2.classList.remove("oculto");
+        voca.classList.remove("circulo");
         window.navigator.vibrate([55])
     }
     recognitionHoradere.onend = function () {
-        startrecord.setAttribute("src","img/lith_face/Lith_Face normal.svg");
-        startrecord.classList.remove("circulo");
+        voca.setAttribute("src","img/lith_face/Lith_voca.svg");
+        ojo1.classList.remove("oculto");
+        ojo2.classList.remove("oculto");
+        voca.classList.remove("circulo");
         window.navigator.vibrate([55])
     }
 
