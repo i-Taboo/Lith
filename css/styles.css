@@ -40,7 +40,7 @@ body{
 }
 
 .voca{
-    margin-bottom: -4%;
+    margin-bottom: -6%;
     height: 100%;
 }
 
@@ -223,12 +223,23 @@ body{
     opacity: 80%;
 
 }@media screen and (max-width:1080px){
-    .botonprincipal{
-        width: 50.5%;
-        font-size: 7vw;
+    .cara{
+        width: 100%;
+        height: 100%;
+        
     }
     .texto{
         font-size: 4vw;
+    }
+    .ojo{
+        height: 80%;
+        margin-left:-82% ;
+        margin-right:-82% ;
+    }
+    
+    .voca{
+        margin-bottom: -20%;
+        height: 100%;
     }
     .butons{
         font-size:4.7vw;
