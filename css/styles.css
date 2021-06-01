@@ -89,7 +89,8 @@ body{
  
 .oculto{
     transform: scale(0);
-    margin-left: -41.3%;
+    width: -0;
+    height: -0;
 }
 
 .opacidad_menor{
