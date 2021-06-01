@@ -169,7 +169,5 @@ function guiñar(e) {
     setTimeout(guiño19,660);
     
 }
-function animar_chistes(respuesta) {
 
-}
 

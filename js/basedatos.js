@@ -8,6 +8,7 @@ let whenr = localStorage.getItem("cuandorec");
 let hwhenr = localStorage.getItem("hcuandorec");
 let today = JSON.stringify(hoy);
 let hour = JSON.stringify(horactual);
+let welcome = 0;
 tema = localStorage.getItem("temas");
 console.log(username);
 console.log(vsdtxt);
@@ -24,11 +25,11 @@ let numerorandom3 = Math.floor(Math.random() * 6);
     "Es hora de emplear mis conocimientos ya llego "+username,
     "Inserte mensaje de bienvenida generico",
     "9648. 9649, ah,"+username+" bienvenido, solo estaba contando los codigos necesarios para ser un niño de verdad",
-    "Mis codigos me indican que alguien muy guapo esta cerca, ah hola"+username+", con razon",
     "¿En que trabajaremos el dia de hoy?"
 ]
-if (namecheck.indexOf("si") > -1) {
+if (namecheck.indexOf("si") > -1 && welcome !== hoy) {
     speechSynthesis.speak(new SpeechSynthesisUtterance(bienvenidas[numerorandom3]));
+    welcome = hoy;
     // animacion_hablar(this, 20);
 }
 // base de configuraciones

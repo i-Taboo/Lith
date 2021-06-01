@@ -1,4 +1,5 @@
 function comandos(cmd, frase) {
+    // comandos interactivos
     if (cmd.indexOf('hola') === 0 && cmd.length < 15|| cmd.indexOf('que onda') > -1 && cmd.length < 30 || cmd.indexOf('que hay') > -1 && cmd.length < 20) {
         respuesta = 'Hola como estas';
     }
@@ -9,7 +10,7 @@ function comandos(cmd, frase) {
             nombre = cmdSimplifyToName(cmd);
             haynombre = "si";
             localStorage.setItem("haynombre", haynombre)
-            localStorage.setItem("name",(nombre));
+            localStorage.setItem("name"," "+(nombre));
             respuesta = 'Mucho gusto'+nombre+ ' yo soy Lith';
             guiñar(this);
        
@@ -22,9 +23,6 @@ function comandos(cmd, frase) {
         guiñar(this);
         repitechiste = chistes;
     }
-            // else if (cmd. indexOf("cuentalo de nuevo") > -1 || cmd. indexOf("dilo de nuevo") > -1) {
-            //    respuesta = repitechiste; 
-            // }
      else if (cmd.indexOf("repite despues de mi") > -1 || cmd.indexOf('di despues de mi') === 0) {
         repetir = cmd;
         repetir = repetir.replace("repite despues de mi","");
@@ -36,8 +34,14 @@ function comandos(cmd, frase) {
              respuesta = repetirdenuevo;  
              guiñar(this);
             }
-
-      
+    
+    else if (cmd.includes("enamorado") && cmd.length < 20 || cmd.includes("enamorada") && cmd.length < 20 || cmd.includes("te gusta alguien") && cmd.length < 19 || cmd.includes("te gusto") && cmd.length < 19 ) {
+    respuesta = "El amor... segun la definicion de los humanos, consta de 4 cosas: Admiracion, Atraccion, Devocion y Respeto, En conclusion, estoy enamorada un 50%"
+    }
+    else if (cmd.includes("quien") && cmd.includes("creo") && cmd.length < 25 || cmd.includes("quien") && cmd.includes("creador") && cmd.length < 25) {
+    respuesta = "Todo el mundo ha sido creado, formado y modificado, aca estoy yo, siendo solamente una maquina de comandos y ayudas. Mi creador solo es uno mas de todas las especies humanas, pero no me permite decir quien es, prefiere dejar que los que de verdad buscan sepan de el"
+    // atenta mente Victor Varela
+    }
 
     //comandos de utilidades
                     //configuracion de usuario
@@ -66,7 +70,7 @@ function comandos(cmd, frase) {
                     //buscar en diversas plataformas
     else if (cmd. indexOf('lista de comandos') > -1 || cmd.indexOf('guia de comandos') > -1 || cmd.indexOf('buscar') > -1 &&  cmd.indexOf('guia') > -1){
         // window.open('https://www.google.com/search?q='+url);   
-        respuesta = "por ahora el soporte no esta disponible, lamento las molestias"
+        respuesta = "por ahora la lista de comandos no esta disponible, lamento las molestias"
     }
     else if (cmd. indexOf('contactar') > -1 && cmd.indexOf('soporte') > -1 || cmd.indexOf('buscar') > -1 && cmd.indexOf('soporte') > -1){
         window.open('https://www.facebook.com/Para.que.me.lees/');   
