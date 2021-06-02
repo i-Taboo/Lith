@@ -48,4 +48,3 @@ recognitionHoradere.addEventListener("start", () => {
 
 
 
-

@@ -9,6 +9,7 @@ let hwhenr = localStorage.getItem("hcuandorec");
 let today = JSON.stringify(hoy);
 let hour = JSON.stringify(horactual);
 let welcome = 0;
+let ya_hubo_bienvenida = localStorage.getItem("ya_hubo_welcome");
 tema = localStorage.getItem("temas");
 console.log(username);
 console.log(vsdtxt);
@@ -27,9 +28,10 @@ let numerorandom3 = Math.floor(Math.random() * 6);
     "9648. 9649, ah,"+username+" bienvenido, solo estaba contando los codigos necesarios para ser un niño de verdad",
     "¿En que trabajaremos el dia de hoy?"
 ]
-if (namecheck.indexOf("si") > -1 && welcome !== hoy) {
+if (namecheck.indexOf("si") > -1 && ya_hubo_bienvenida !== today) {
     speechSynthesis.speak(new SpeechSynthesisUtterance(bienvenidas[numerorandom3]));
     welcome = hoy;
+    localStorage.setItem("ya_hubo_welcome",welcome);
     // animacion_hablar(this, 20);
 }
 // base de configuraciones

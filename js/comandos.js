@@ -42,6 +42,14 @@ function comandos(cmd, frase) {
     respuesta = "Todo el mundo ha sido creado, formado y modificado, aca estoy yo, siendo solamente una maquina de comandos y ayudas. Mi creador solo es uno mas de todas las especies humanas, pero no me permite decir quien es, prefiere dejar que los que de verdad buscan sepan de el"
     // atenta mente Victor Varela
     }
+    else if (cmd.includes("buenas") && cmd.includes("noches") && cmd.length < 25 || cmd.includes("hasta") && cmd.includes("mañana") && cmd.length < 25) {
+        respuesta = "Buenas noches"+username+", que tengas una bonita noche"
+
+        }
+        else if (cmd.includes("buen") && cmd.includes("dia") && cmd.length < 25 || cmd.includes("buenos") && cmd.includes("dias") && cmd.length < 25) {
+            respuesta = "Buenos dias"+username+", que tengas un dia productivo"
+    
+            }
 
     //comandos de utilidades
                     //configuracion de usuario
@@ -66,8 +74,8 @@ function comandos(cmd, frase) {
         guiñar(this);
         respuesta = 'tutorial desactivado';
     }
-                      
-                    //buscar en diversas plataformas
+    // soporte
+    
     else if (cmd. indexOf('lista de comandos') > -1 || cmd.indexOf('guia de comandos') > -1 || cmd.indexOf('buscar') > -1 &&  cmd.indexOf('guia') > -1){
         // window.open('https://www.google.com/search?q='+url);   
         respuesta = "por ahora la lista de comandos no esta disponible, lamento las molestias"
@@ -76,6 +84,7 @@ function comandos(cmd, frase) {
         window.open('https://www.facebook.com/Para.que.me.lees/');   
         respuesta = "de acuerdo, redirigiendo al contacto de soporte, lamento las molestias"
     }
+                    //buscar en diversas plataformas
     else if (cmd. indexOf('busca en google') > -1 || cmd.indexOf('buscar en google') > -1){
         url = cmd;
         guiñar(this);
