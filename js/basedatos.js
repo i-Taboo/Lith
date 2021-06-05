@@ -11,8 +11,8 @@ let hour = JSON.stringify(horactual);
 let welcome = 0;
 let ya_hubo_bienvenida = localStorage.getItem("ya_hubo_welcome");
 tema = localStorage.getItem("temas");
-console.log(username);
-console.log(vsdtxt);
+console.log("Nombre de usuario:"+username);
+console.log("visualizacion de texto:"+vsdtxt);
 // quitar tutorial 
 if (tutorial === null) {
 speechSynthesis.speak(new SpeechSynthesisUtterance(tuto));

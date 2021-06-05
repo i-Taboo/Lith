@@ -7,7 +7,7 @@ var tuto = "Bienvenido usuario.. Yo soy LITH, una asistente virtual de navegacio
 const fecha = new Date();
 var hoy = fecha.getDate();
 var horactual = fecha.getHours();
-console.log(hoy);
+console.log("Que dia es hoy: "+hoy);
 var recuerdo;
 var vdtxt;
 var str;

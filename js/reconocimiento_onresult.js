@@ -27,15 +27,18 @@ recognition.onresult = (event) => {
     //comandos:
     comandos(cmd, frase)
     // comandos interactivos
+
     speechSynthesis.speak(new SpeechSynthesisUtterance(respuesta));
     console.log(respuesta);
     document.getElementById("textodicho").innerHTML = username+":"+frase;
     document.getElementById("textoescuchado").innerHTML = "LITH:"+respuesta;
-    
 
-}
+    }
+
 
     recognition.onend = function () {
+        document.getElementById("audio").setAttribute("src","audio/recognition end.mp3");
+        document.getElementById("audio").setAttribute("autoplay","true");
         voca.setAttribute("src","img/lith_face/Lith_voca.svg");
         ojo1.classList.remove("oculto");
         ojo2.classList.remove("oculto");
@@ -43,6 +46,8 @@ recognition.onresult = (event) => {
         window.navigator.vibrate([55])
     }
     recognitionDiadere.onend = function () {
+        document.getElementById("audio").setAttribute("src","audio/recognition end.mp3");
+        document.getElementById("audio").setAttribute("autoplay","true");
         voca.setAttribute("src","img/lith_face/Lith_voca.svg");
         ojo1.classList.remove("oculto");
         ojo2.classList.remove("oculto");
@@ -50,6 +55,8 @@ recognition.onresult = (event) => {
         window.navigator.vibrate([55])
     }
     recognitionHoradere.onend = function () {
+        document.getElementById("audio").setAttribute("src","audio/recognition end.mp3");
+        document.getElementById("audio").setAttribute("autoplay","true");
         voca.setAttribute("src","img/lith_face/Lith_voca.svg");
         ojo1.classList.remove("oculto");
         ojo2.classList.remove("oculto");

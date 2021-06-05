@@ -11,7 +11,7 @@ function comandos(cmd, frase) {
             haynombre = "si";
             localStorage.setItem("haynombre", haynombre)
             localStorage.setItem("name"," "+(nombre));
-            respuesta = 'Mucho gusto'+nombre+ ' yo soy Lith';
+            respuesta = 'Mucho gusto '+nombre+ ' yo soy Lith';
             guiñar(this);
        
     }
@@ -52,6 +52,9 @@ function comandos(cmd, frase) {
             }
 
     //comandos de utilidades
+    else if (cmd.includes("tira") && cmd.includes("dado") && cmd.length < 15 || cmd.includes("lanza") && cmd.includes("dado") && cmd.length < 15) {
+        respuesta = "De acuerdo, el dado revoto "+numero_aleatorio(7)+" veces y salio el numero "+numero_aleatorio(7);
+    }
                     //configuracion de usuario
     else if (cmd.includes("desactiva") && cmd.includes("visualizacion") && cmd.length < 50 || cmd.includes("quita") && cmd.includes("visualizacion") && cmd.length < 50 || cmd.includes("inactiva") && cmd.includes("visualizacion") && cmd.length < 50) {
         vdtxt = 1;
@@ -275,6 +278,10 @@ function comandos(cmd, frase) {
     rmrmr = rmrmr / 4.9 ;
     new SpeechSynthesisUtterance(respuesta).onstart = animacion_hablar(this, rmrmr);
 
-    
+    if (namecheck.includes("no")) {
+        let i_dont_know_your_name = ", Por cierto, no se tu nombre todavìa, me gustaria saber como te llamas"
+        guiñar(this);
+            speechSynthesis.speak(new SpeechSynthesisUtterance(i_dont_know_your_name));
+        }   
 }
 

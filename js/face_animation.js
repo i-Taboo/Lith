@@ -1,11 +1,11 @@
 
 function animacion_hablar(e, veces_a_repetir) {
     let v = 0;
+ 
   let hablar = setInterval(() => {
      
        if (v < veces_a_repetir) {
          
-           console.log(v)
        }else{
        clearInterval(hablar);
        }
@@ -77,15 +77,6 @@ function animacion_hablar(e, veces_a_repetir) {
         f = 0
         v++
     }, 300);
-    
-    setInterval(() => {
-       if (f === 70) {
-        console.log('hace 1.1m no se ha usado')
-           f = 0
-       }else{
-           f++
-       }
-    }, 600);
    
     
 }
@@ -170,4 +161,114 @@ function guiñar(e) {
     
 }
 
+function cerrar_ojos(e) {
+    function guiño1() {
+        ojo2.setAttribute("src","img/lith_face/Lith_ojo_cerrar1.svg")
+        ojo1.setAttribute("src","img/lith_face/Lith_ojo_cerrar1.svg") 
+    }
+    setTimeout(guiño1,300);
+    function guiño2() {
+        ojo2.setAttribute("src","img/lith_face/Lith_ojo_cerrar2.svg") 
+        ojo1.setAttribute("src","img/lith_face/Lith_ojo_cerrar2.svg") 
+    }
+    setTimeout(guiño2,320);
+    function guiño3() {
+        ojo2.setAttribute("src","img/lith_face/Lith_ojo_cerrar3.svg") 
+        ojo1.setAttribute("src","img/lith_face/Lith_ojo_cerrar3.svg") 
+    }
+    setTimeout(guiño3,340);
+    function guiño4() {
+        ojo2.setAttribute("src","img/lith_face/Lith_ojo_cerrar4.svg") 
+        ojo1.setAttribute("src","img/lith_face/Lith_ojo_cerrar4.svg") 
+    }
+    setTimeout(guiño4,360);
+    function guiño5() {
+        ojo2.setAttribute("src","img/lith_face/Lith_ojo_cerrar5.svg") 
+        ojo1.setAttribute("src","img/lith_face/Lith_ojo_cerrar5.svg") 
+    }
+    setTimeout(guiño5,380);
+    function guiño6() {
+        ojo2.setAttribute("src","img/lith_face/Lith_ojo_cerrar6.svg") 
+        ojo1.setAttribute("src","img/lith_face/Lith_ojo_cerrar6.svg") 
+    }
+    setTimeout(guiño6,400);
+    function guiño7() {
+        ojo2.setAttribute("src","img/lith_face/Lith_ojo_cerrar7.svg") 
+        ojo1.setAttribute("src","img/lith_face/Lith_ojo_cerrar7.svg") 
+    }
+    setTimeout(guiño7,420);
+    function guiño8() {
+        ojo2.setAttribute("src","img/lith_face/Lith_ojo_cerrar8.svg") 
+        ojo1.setAttribute("src","img/lith_face/Lith_ojo_cerrar8.svg") 
+    }
+    setTimeout(guiño8,440);
+    function guiño9() {
+        ojo2.setAttribute("src","img/lith_face/Lith_ojo_cerrar9.svg") 
+        ojo1.setAttribute("src","img/lith_face/Lith_ojo_cerrar9.svg") 
+    }
+    setTimeout(guiño9,460);
+    function guiño10() {
+        ojo2.setAttribute("src","img/lith_face/Lith_ojo_cerrar10.svg") 
+        ojo1.setAttribute("src","img/lith_face/Lith_ojo_cerrar10.svg") 
+    }
+    setTimeout(guiño10,480);
+    function guiño11() {
+        ojo2.setAttribute("src","img/lith_face/Lith_ojo_cerrar9.svg") 
+        ojo1.setAttribute("src","img/lith_face/Lith_ojo_cerrar9.svg") 
+    }
+    setTimeout(guiño11,500);
+    function guiño12() {
+        ojo2.setAttribute("src","img/lith_face/Lith_ojo_cerrar8.svg") 
+        ojo1.setAttribute("src","img/lith_face/Lith_ojo_cerrar8.svg") 
+    }
+    setTimeout(guiño12,520);
+    function guiño13() {
+        ojo2.setAttribute("src","img/lith_face/Lith_ojo_cerrar7.svg") 
+        ojo1.setAttribute("src","img/lith_face/Lith_ojo_cerrar7.svg") 
+    }
+    setTimeout(guiño13,540);
+    function guiño14() {
+        ojo2.setAttribute("src","img/lith_face/Lith_ojo_cerrar6.svg") 
+        ojo1.setAttribute("src","img/lith_face/Lith_ojo_cerrar6.svg") 
+    }
+    setTimeout(guiño14,560);
+    function guiño15() {
+        ojo2.setAttribute("src","img/lith_face/Lith_ojo_cerrar5.svg") 
+        ojo1.setAttribute("src","img/lith_face/Lith_ojo_cerrar5.svg") 
+    }
+    setTimeout(guiño15,580);
+    function guiño16() {
+        ojo2.setAttribute("src","img/lith_face/Lith_ojo_cerrar4.svg") 
+        ojo1.setAttribute("src","img/lith_face/Lith_ojo_cerrar4.svg") 
+    }
+    setTimeout(guiño16,600);
+    function guiño17() {
+        ojo2.setAttribute("src","img/lith_face/Lith_ojo_cerrar3.svg") 
+        ojo1.setAttribute("src","img/lith_face/Lith_ojo_cerrar3.svg") 
+    }
+    setTimeout(guiño17,620);
+    function guiño18() {
+        ojo2.setAttribute("src","img/lith_face/Lith_ojo_cerrar2.svg") 
+        ojo1.setAttribute("src","img/lith_face/Lith_ojo_cerrar2.svg") 
+    }
+    setTimeout(guiño18,640);
+    
+    function guiño19() {
+        ojo2.setAttribute("src","img/lith_face/Lith_ojo_cerrar1.svg") 
+        ojo1.setAttribute("src","img/lith_face/Lith_ojo_cerrar1.svg") 
+    }
+    setTimeout(guiño19,640);
+    
+}
+let f = 0;
+setInterval(() => {
+    f = numero_aleatorio(2)
+    if (f === 1) {
+        cerrar_ojos(this)
+    }else{
+    }
+ }, 4000);
+function animar_chistes(respuesta) {
+
+}
 

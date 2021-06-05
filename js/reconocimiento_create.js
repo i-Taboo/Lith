@@ -14,6 +14,8 @@ recognition.interResults = false;
 
 
 recognition.addEventListener("start", () => {
+ document.getElementById("audio").setAttribute("src","audio/sra.mp3");
+ document.getElementById("audio").setAttribute("autoplay","true");
  voca.setAttribute("src","img/bx-circle_w.svg");
  voca.classList.add("circulo");
  ojo1.classList.add("oculto")
@@ -26,6 +28,8 @@ recognitionDiadere.lang = 'es-ES';
 recognitionDiadere.continuous = false;
 recognitionDiadere.interResults = false;
 recognitionDiadere.addEventListener("start", () => {
+    document.getElementById("audio").setAttribute("src","audio/sra.mp3");
+    document.getElementById("audio").setAttribute("autoplay","true");
     voca.setAttribute("src","img/bx-circle_w.svg");
     voca.classList.add("circulo");
     ojo1.classList.add("oculto")
@@ -38,6 +42,8 @@ recognitionHoradere.lang = 'es-ES';
 recognitionHoradere.continuous = false;
 recognitionHoradere.interResults = false;
 recognitionHoradere.addEventListener("start", () => {
+    document.getElementById("audio").setAttribute("src","audio/sra.mp3");
+    document.getElementById("audio").setAttribute("autoplay","true");
     voca.setAttribute("src","img/bx-circle_w.svg");
     voca.classList.add("circulo");
     ojo1.classList.add("oculto")

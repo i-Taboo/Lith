@@ -392,7 +392,7 @@ function cmdSimplifyToName(cmd) {
     cmd = cmd.replace("es", "");
     cmd = cmd.replace("eh", "");
     cmd = cmd.replace("?", "");
-    cmd = cmd.replace("l", "");
+    cmd = cmd.replace(" l", "");
     cmd = cmd.replace("¿", "");
     cmd = cmd.replace(".", "");
     cmd = cmd.replace(",", "");

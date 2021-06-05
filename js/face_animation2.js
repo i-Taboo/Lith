@@ -135,14 +135,7 @@ function animacion_hablar(e, veces_a_repetir) {
         v++
     }, 300);
     
-    setInterval(() => {
-       if (f === 70) {
-        console.log('hace 1.1m no se ha usado')
-           f = 0
-       }else{
-           f++
-       }
-    }, 1000);
+
    
     
 }
@@ -225,8 +218,5 @@ function guiñar(e) {
     }
     setTimeout(guiño19,660);
     
-}
-function animar_chistes(respuesta) {
-
 }
 
