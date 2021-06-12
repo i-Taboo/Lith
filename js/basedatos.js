@@ -2,10 +2,70 @@ let username = localStorage.getItem("name");
 var vsdtxt = localStorage.getItem("visualizaciondetexto");
 let tutorial = localStorage.getItem("tutorial");
 let namecheck = localStorage.getItem("haynombre");
-let remember = localStorage.getItem("remember");
+let remember = [
+    localStorage.getItem("remember_all_day"),
+    localStorage.getItem("remember_1"),
+    localStorage.getItem("remember_2"),
+    localStorage.getItem("remember_3"),
+    localStorage.getItem("remember_4"),
+    localStorage.getItem("remember_5"),
+    localStorage.getItem("remember_6"),
+    localStorage.getItem("remember_7"),
+    localStorage.getItem("remember_8"),
+    localStorage.getItem("remember_9"),
+    localStorage.getItem("remember_10"),
+    localStorage.getItem("remember_11"),
+    localStorage.getItem("remember_12"),
+    localStorage.getItem("remember_13"),
+    localStorage.getItem("remember_14"),
+    localStorage.getItem("remember_15"),
+    localStorage.getItem("remember_16"),
+    localStorage.getItem("remember_17"),
+    localStorage.getItem("remember_18"),
+    localStorage.getItem("remember_19"),
+    localStorage.getItem("remember_20"),
+    localStorage.getItem("remember_21"),
+    localStorage.getItem("remember_22"),
+    localStorage.getItem("remember_23"),
+    localStorage.getItem("remember_24"),
+]
 let recuh = localStorage.getItem("recuh")
-let whenr = localStorage.getItem("cuandorec");
-let hwhenr = localStorage.getItem("hcuandorec");
+let whenr = [
+    localStorage.getItem("cuandorec_hoy"),
+    localStorage.getItem("cuandorec_mañana"),
+    localStorage.getItem("cuandorec_pasado_mañana"),
+    localStorage.getItem("cuandorec_tres_dias"),
+    localStorage.getItem("cuandorec_cuatro_dias"),
+    localStorage.getItem("cuandorec_cinco_dias"),
+    localStorage.getItem("cuandorec_seis_dias"),
+]
+let hwhenr = [
+    localStorage.getItem("hr_all_day"),
+    localStorage.getItem("hr_1"),
+    localStorage.getItem("hr_2"),
+    localStorage.getItem("hr_3"),
+    localStorage.getItem("hr_4"),
+    localStorage.getItem("hr_5"),
+    localStorage.getItem("hr_6"),
+    localStorage.getItem("hr_7"),
+    localStorage.getItem("hr_8"),
+    localStorage.getItem("hr_9"),
+    localStorage.getItem("hr_10"),
+    localStorage.getItem("hr_11"),
+    localStorage.getItem("hr_12"),
+    localStorage.getItem("hr_13"),
+    localStorage.getItem("hr_14"),
+    localStorage.getItem("hr_15"),
+    localStorage.getItem("hr_16"),
+    localStorage.getItem("hr_17"),
+    localStorage.getItem("hr_18"),
+    localStorage.getItem("hr_19"),
+    localStorage.getItem("hr_20"),
+    localStorage.getItem("hr_21"),
+    localStorage.getItem("hr_22"),
+    localStorage.getItem("hr_23"),
+    localStorage.getItem("hr_24"),
+]
 let today = JSON.stringify(hoy);
 let hour = JSON.stringify(horactual);
 let welcome = 0;
@@ -90,16 +150,18 @@ switch (tema){
 
 
 
-if (whenr === today && hwhenr === hour) {
-    speechSynthesis.speak(new SpeechSynthesisUtterance(remember));
-    console.log(remember);
-    setInterval(notificacionagenda, 900000);
-}
-else if (hwhenr === "all day") {
-    if (whenr === today) {
-        speechSynthesis.speak(new SpeechSynthesisUtterance(remember));
+if (whenr.includes(today) && hwhenr.includes(hour)) { 
+        speechSynthesis.speak(new SpeechSynthesisUtterance(remember[hour]));
         console.log(remember);
-        setInterval(notificacionagenda, 900000);
+        setInterval(notificacionagenda, 600000); 
+}
+else if (hwhenr.includes("todo el dia")) {
+    if (whenr.includes(today)) {
+            speechSynthesis.speak(new SpeechSynthesisUtterance(remember[0]));
+            console.log(remember);
+            setInterval(notificacionagenda, 600000); 
+
+  
     }
 }
 Notification.requestPermission();

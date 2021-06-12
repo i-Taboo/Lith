@@ -1,4 +1,4 @@
-function recordatorio(e) {
+function recordatorio(e,recuerdo) {
     function nexrecognition() {
         new SpeechSynthesisUtterance(respuesta).onend = recognitionDiadere.start()
 
@@ -45,55 +45,55 @@ function recordatorio(e) {
         console.log(cmd);
     
         if (cmd.indexOf("hoy") > -1) {
-            whenrmb = hoy;
-            localStorage.setItem("cuandorec", whenrmb)
+            dwhenrmb = hoy;
+            localStorage.setItem("cuandorec_hoy", dwhenrmb)
             console.log(whenrmb);
             userselectD = 'si';
             respuesta = "almacenando en la agenda para hoy, ¿a que hora quieres que te lo recuerde?, o prefieres que te lo recuerde todo el dia?";
         }else if (cmd.indexOf("mañana") > -1 || cmd.indexOf('un') > -1) {
-            whenrmb = hoy+1;
-            localStorage.setItem("cuandorec", whenrmb)
+            dwhenrmb = hoy+1;
+            localStorage.setItem("cuandorec_mañana", dwhenrmb)
             console.log(whenrmb);
             userselectD = 'si';
             respuesta = "almacenando en la agenda para mañana, ¿a que hora quieres que te lo recuerde?, o prefieres que te lo recuerde todo el dia?";
         }else if (cmd.indexOf("pasado mañana") > -1 || cmd.indexOf('dos') > -1) {
-            whenrmb = hoy+2;
-            localStorage.setItem("cuandorec", whenrmb)
+            dwhenrmb = hoy+2;
+            localStorage.setItem("cuandorec_pasado_mañana", dwhenrmb)
             console.log(whenrmb);
             userselectD = 'si';
             respuesta = "almacenando en la agenda para pasado mañana, ¿a que hora quieres que te lo recuerde?, o prefieres que te lo recuerde todo el dia?";
         }
         else if (cmd.indexOf("tres dias") > -1 || cmd.indexOf('tres') > -1 || cmd.indexOf('pos pasado mañana') > -1) {
-            whenrmb = hoy+3;
-            localStorage.setItem("cuandorec", whenrmb)
+            dwhenrmb = hoy+3;
+            localStorage.setItem("cuandorec_tres_dias", dwhenrmb)
             console.log(whenrmb);
             userselectD = 'si';
             respuesta = "almacenando en la agenda para dentro de 3 dias, ¿a que hora quieres que te lo recuerde?, o prefieres que te lo recuerde todo el dia?";
         }
         else if (cmd.indexOf("cuatro dias") > -1 || cmd.indexOf('cuatro') > -1) {
-            whenrmb = hoy+4;
-            localStorage.setItem("cuandorec", whenrmb)
+            dwhenrmb = hoy+4;
+            localStorage.setItem("cuandorec_cuatro_dias", dwhenrmb)
             console.log(whenrmb);
             userselectD = 'si';
             respuesta = "almacenando en la agenda para dentro de 4 dias, ¿a que hora quieres que te lo recuerde?, o prefieres que te lo recuerde todo el dia?";
         }
         else if (cmd.indexOf("en cinco dias") > -1 || cmd.indexOf('cinco') > -1) {
-            whenrmb = hoy+5;
-            localStorage.setItem("cuandorec", whenrmb)
+            dwhenrmb = hoy+5;
+            localStorage.setItem("cuandorec_cinco_dias", dwhenrmb)
             console.log(whenrmb);
             userselectD = 'si';
             respuesta = "almacenando en la agenda para dentro de cinco dias, ¿a que hora quieres que te lo recuerde?, o prefieres que te lo recuerde todo el dia?";
         }
         else if (cmd.indexOf("en seis") > -1 || cmd.indexOf('seis') > -1) {
-            whenrmb = hoy+6;
-            localStorage.setItem("cuandorec", whenrmb)
+            dwhenrmb = hoy+6;
+            localStorage.setItem("cuandorec_seis_dias", dwhenrmb)
             console.log(whenrmb);
             userselectD = 'si';
             respuesta = "almacenando en la agenda para dentro de seis, ¿a que hora quieres que te lo recuerde?, o prefieres que te lo recuerde todo el dia?";
         }
         else if (cmd.indexOf("en una semana") > -1 || cmd.indexOf('siete') > -1) {
-            whenrmb = hoy+7;
-            localStorage.setItem("cuandorec", whenrmb)
+            dwhenrmb = hoy+7;
+            localStorage.setItem("cuandorec_siete_dias", dwhenrmb)
             console.log(whenrmb);
             userselectD = 'si';
             respuesta = "almacenando en la agenda para dentro de una semana, ¿a que hora quieres que te lo recuerde?, o prefieres que te lo recuerde todo el dia?";
@@ -138,7 +138,6 @@ function recordatorio(e) {
             cmd = cmd.replace("h", "");
             cmd = cmd.replace("j", "");
             cmd = cmd.replace("k", "");
-            cmd = cmd.replace("p", "");
             cmd = cmd.replace("q", "")
             cmd = cmd.replace("s", "");
             cmd = cmd.replace("u", "");
@@ -180,154 +179,204 @@ function recordatorio(e) {
             
         console.log(cmd);
         if (cmd.indexOf("todo el dia") > -1) {
-            whenrmb = "all day";
-            localStorage.setItem("hcuandorec", whenrmb);
+            hwhenrmb = "todo el dia";
+            localStorage.setItem("hr_all_day", hwhenrmb);
             console.log(whenrmb);
             respuesta = "de acuerdo te lo recordare hasta que se acabe el dia ";
+            recordar += "programado para recordar a la hora :"+"todo el dia";
+            localStorage.setItem("remember_all_day",recordar);
         }
         else if (cmd.indexOf("una") > -1 && cmd.indexOf("mañana")  > -1  || cmd.indexOf('una') > -1 && cmd.indexOf("am")  > -1 ) {
-            whenrmb = "1";
-            localStorage.setItem("hcuandorec", whenrmb);
+            hwhenrmb = "1";
+            localStorage.setItem("hr_1", hwhenrmb);
             console.log(whenrmb);
             respuesta = "de acuerdo te lo recordare a la una de la mañana";
+            recordar += "programado para recordar a la hora :"+hwhenrmb+"del dia";
+            localStorage.setItem("remember_1",recordar);
         }
         else if (cmd.indexOf("dos") > -1 && cmd.indexOf("mañana")  > -1 || cmd.indexOf('dos') > -1 && cmd.indexOf("am")  > -1 ) {
-            whenrmb = "2";
-            localStorage.setItem("hcuandorec", whenrmb);
+            hwhenrmb = "2";
+            localStorage.setItem("hr_2", hwhenrmb);
             console.log(whenrmb);
-            respuesta = "de acuerdo te lo recordare a las 2 de la mañana"; 
+            respuesta = "de acuerdo te lo recordare a las 2 de la mañana";
+            recordar += "programado para recordar a la hora :"+hwhenrmb+"del dia";
+            localStorage.setItem("remember_2",recordar); 
         }
         else if (cmd.indexOf("tres") > -1 && cmd.indexOf("mañana")  > -1  || cmd.indexOf('tres') > -1 && cmd.indexOf("am")  > -1 ) {
-            whenrmb = "3";
-            localStorage.setItem("hcuandorec", whenrmb);
+            hwhenrmb = "3";
+            localStorage.setItem("hr_3", hwhenrmb);
             console.log(whenrmb);
-            respuesta = "de acuerdo te lo recordare a las 3 de la mañana"; 
+            respuesta = "de acuerdo te lo recordare a las 3 de la mañana";
+            recordar += "programado para recordar a la hora :"+hwhenrmb+"del dia";
+            localStorage.setItem("remember_3",recordar); 
         }
         else if (cmd.indexOf("cuatro") > -1 && cmd.indexOf("mañana")  > -1  || cmd.indexOf('cuatro') > -1 && cmd.indexOf("am")  > -1 ) {
-            whenrmb = "4";
-            localStorage.setItem("hcuandorec", whenrmb);
+            hwhenrmb = "4";
+            localStorage.setItem("hr_4", hwhenrmb);
             console.log(whenrmb);
-            respuesta = "de acuerdo te lo recordare a las 4 de la mañana"; 
+            respuesta = "de acuerdo te lo recordare a las 4 de la mañana";
+            recordar += "programado para recordar a la hora :"+hwhenrmb+"del dia";
+            localStorage.setItem("remember_4",recordar); 
         }
         else if (cmd.indexOf("cinco") > -1 && cmd.indexOf("mañana")  > -1  || cmd.indexOf('cinco') > -1 && cmd.indexOf("am")  > -1 ) {
-            whenrmb = "5";
-            localStorage.setItem("hcuandorec", whenrmb);
+            hwhenrmb = "5";
+            localStorage.setItem("hr_5", hwhenrmb);
             console.log(whenrmb);
-            respuesta = "de acuerdo te lo recordare a las 5 de la mañana"; 
+            respuesta = "de acuerdo te lo recordare a las 5 de la mañana";
+            recordar += "programado para recordar a la hora :"+hwhenrmb+"del dia";
+            localStorage.setItem("remember_5",recordar); 
         }
         else if (cmd.indexOf("seis") > -1 && cmd.indexOf("mañana")  > -1  || cmd.indexOf('seis') > -1 && cmd.indexOf("am")  > -1 ) {
-            whenrmb = "6";
-            localStorage.setItem("hcuandorec", whenrmb);
+            hwhenrmb = "6";
+            localStorage.setItem("hr_6", hwhenrmb);
             console.log(whenrmb);
-            respuesta = "de acuerdo te lo recordare a las 6 de la mañana"; 
+            respuesta = "de acuerdo te lo recordare a las 6 de la mañana";
+            recordar += "programado para recordar a la hora :"+hwhenrmb+"del dia";
+            localStorage.setItem("remember_6",recordar); 
         }
         else if (cmd.indexOf("siete") > -1 && cmd.indexOf("mañana")  > -1  || cmd.indexOf('siete') > -1 && cmd.indexOf("am")  > -1 ) {
-            whenrmb = "7";
-            localStorage.setItem("hcuandorec", whenrmb);
+            hwhenrmb = "7";
+            localStorage.setItem("hr_7", hwhenrmb);
             console.log(whenrmb);
-            respuesta = "de acuerdo te lo recordare a las 7 de la mañana"; 
+            respuesta = "de acuerdo te lo recordare a las 7 de la mañana";
+            recordar += "programado para recordar a la hora :"+hwhenrmb+"del dia";
+            localStorage.setItem("remember_7",recordar); 
         }
         else if (cmd.indexOf("ocho") > -1 && cmd.indexOf("mañana")  > -1  || cmd.indexOf('ocho') > -1 && cmd.indexOf("am")  > -1 ) {
-            whenrmb = "8";
-            localStorage.setItem("hcuandorec", whenrmb);
+            hwhenrmb = "8";
+            localStorage.setItem("hr_8", hwhenrmb);
             console.log(whenrmb);
-            respuesta = "de acuerdo te lo recordare a las 8 de la mañana"; 
+            respuesta = "de acuerdo te lo recordare a las 8 de la mañana";
+            recordar += "programado para recordar a la hora :"+hwhenrmb+"del dia";
+            localStorage.setItem("remember_8",recordar); 
         }
         else if (cmd.indexOf("nueve") > -1 && cmd.indexOf("mañana")  > -1  || cmd.indexOf('nueve') > -1 && cmd.indexOf("am")  > -1 ) {
-            whenrmb = "9";
-            localStorage.setItem("hcuandorec", whenrmb);
+            hwhenrmb = "9";
+            localStorage.setItem("hr_9", hwhenrmb);
             console.log(whenrmb);
-            respuesta = "de acuerdo te lo recordare a las 9 de la mañana"; 
+            respuesta = "de acuerdo te lo recordare a las 9 de la mañana";
+            recordar += "programado para recordar a la hora :"+hwhenrmb+"del dia";
+            localStorage.setItem("remember_9",recordar); 
         }
         else if (cmd.indexOf("diez") > -1 && cmd.indexOf("mañana")  > -1  || cmd.indexOf('diez') > -1 && cmd.indexOf("am")  > -1 ) {
-            whenrmb = "10";
-            localStorage.setItem("hcuandorec", whenrmb);
+            hwhenrmb = "10";
+            localStorage.setItem("hr_10", hwhenrmb);
             console.log(whenrmb);
-            respuesta = "de acuerdo te lo recordare a las 10 de la mañana"; 
+            respuesta = "de acuerdo te lo recordare a las 10 de la mañana";
+            recordar += "programado para recordar a la hora :"+hwhenrmb+"del dia";
+            localStorage.setItem("remember_10",recordar); 
         }
         else if (cmd.indexOf("once") > -1 && cmd.indexOf("mañana")  > -1  || cmd.indexOf('once') > -1 && cmd.indexOf("am")  > -1 ) {
-            whenrmb = "11";
-            localStorage.setItem("hcuandorec", whenrmb);
+            hwhenrmb = "11";
+            localStorage.setItem("hr_11", hwhenrmb);
             console.log(whenrmb);
-            respuesta = "de acuerdo te lo recordare a las 11 de la mañana"; 
+            respuesta = "de acuerdo te lo recordare a las 11 de la mañana";
+            recordar += "programado para recordar a la hora :"+hwhenrmb+"del dia";
+            localStorage.setItem("remember_11",recordar); 
         }
         else if (cmd.indexOf("doce")  > -1 && cmd.indexOf("tarde")  > -1  || cmd.indexOf('doce') > -1 && cmd.indexOf("pm")  > -1 ) {
-            whenrmb = "12";
-            localStorage.setItem("hcuandorec", whenrmb);
+            hwhenrmb = "12";
+            localStorage.setItem("hr_12", hwhenrmb);
             console.log(whenrmb);
-            respuesta = "de acuerdo te lo recordare a las 12 de la tarde"; 
+            respuesta = "de acuerdo te lo recordare a las 12 de la tarde";
+            recordar += "programado para recordar a la hora :"+hwhenrmb+"del dia";
+            localStorage.setItem("remember_12",recordar); 
         }
         else if (cmd.indexOf("una")  > -1 && cmd.indexOf("tarde")  > -1  || cmd.indexOf('una') > -1 && cmd.indexOf("pm")  > -1 ) {
             whenrmb = "13";
-            localStorage.setItem("hcuandorec", whenrmb);
+            localStorage.setItem("hr_13", hwhenrmb);
             console.log(whenrmb);
-            respuesta = "de acuerdo te lo recordare a la una de la tarde"; 
+            respuesta = "de acuerdo te lo recordare a la una de la tarde";
+            recordar += "programado para recordar a la hora :"+hwhenrmb+"del dia";
+            localStorage.setItem("remember_13",recordar); 
         }
         else if (cmd.indexOf("dos")  > -1 && cmd.indexOf("tarde")  > -1  || cmd.indexOf('dos') > -1 && cmd.indexOf("pm")  > -1 ) {
-            whenrmb = "14";
-            localStorage.setItem("hcuandorec", whenrmb);
+            hwhenrmb = "14";
+            localStorage.setItem("hr_14", hwhenrmb);
             console.log(whenrmb);
-            respuesta = "de acuerdo te lo recordare a las 2 de la tarde"; 
+            respuesta = "de acuerdo te lo recordare a las 2 de la tarde";
+            recordar += "programado para recordar a la hora :"+hwhenrmb+"del dia";
+            localStorage.setItem("remember_14",recordar); 
         }
         else if (cmd.indexOf("tres")  > -1 && cmd.indexOf("tarde")  > -1  || cmd.indexOf('tres') > -1 && cmd.indexOf("pm")  > -1 ) {
-            whenrmb = "15";
-            localStorage.setItem("hcuandorec", whenrmb);
+            hwhenrmb = "15";
+            localStorage.setItem("hr_15", hwhenrmb);
             console.log(whenrmb);
-            respuesta = "de acuerdo te lo recordare a las 3 de la tarde"; 
+            respuesta = "de acuerdo te lo recordare a las 3 de la tarde";
+                        recordar += "programado para recordar:"+hwhenrmb;
+            localStorage.setItem("remember_15",recordar); 
         }
         else if (cmd.indexOf("cuatro")  > -1 && cmd.indexOf("tarde")  > -1  || cmd.indexOf('cuatro') > -1 && cmd.indexOf("pm")  > -1 ) {
-            whenrmb = "16";
-            localStorage.setItem("hcuandorec", whenrmb);
+            hwhenrmb = "16";
+            localStorage.setItem("hr_16", hwhenrmb);
             console.log(whenrmb);
-            respuesta = "de acuerdo te lo recordare a las 4 de la tarde"; 
+            respuesta = "de acuerdo te lo recordare a las 4 de la tarde";
+            recordar += "programado para recordar a la hora :"+hwhenrmb+"del dia";
+            localStorage.setItem("remember_16",recordar); 
         }
         else if (cmd.indexOf("cinco")  > -1 && cmd.indexOf("tarde")  > -1  || cmd.indexOf('cinco') > -1 && cmd.indexOf("pm")  > -1 ) {
-            whenrmb = "17";
-            localStorage.setItem("hcuandorec", whenrmb);
+            hwhenrmb = "17";
+            localStorage.setItem("hr_17", hwhenrmb);
             console.log(whenrmb);
-            respuesta = "de acuerdo te lo recordare a las 5 de la tarde"; 
+            respuesta = "de acuerdo te lo recordare a las 5 de la tarde";
+            recordar += "programado para recordar a la hora :"+hwhenrmb+"del dia";
+            localStorage.setItem("remember_17",recordar); 
         }
         else if (cmd.indexOf("seis")  > -1 && cmd.indexOf("tarde")  > -1  || cmd.indexOf('seis') > -1 && cmd.indexOf("pm")  > -1 ) {
-            whenrmb = "18";
-            localStorage.setItem("hcuandorec", whenrmb);
+            hwhenrmb = "18";
+            localStorage.setItem("hr_18", hwhenrmb);
             console.log(whenrmb);
-            respuesta = "de acuerdo te lo recordare a las 6 de la tarde"; 
+            respuesta = "de acuerdo te lo recordare a las 6 de la tarde";
+            recordar += "programado para recordar a la hora :"+hwhenrmb+"del dia";
+            localStorage.setItem("remember_18",recordar); 
         }
         else if (cmd.indexOf("siete")  > -1 && cmd.indexOf("tarde")  > -1  || cmd.indexOf('siete') > -1 && cmd.indexOf("pm")  > -1 ) {
-            whenrmb = "19";
-            localStorage.setItem("hcuandorec", whenrmb);
+            hwhenrmb = "19";
+            localStorage.setItem("hr_19", hwhenrmb);
             console.log(whenrmb);
-            respuesta = "de acuerdo te lo recordare a las 7 de la noche"; 
+            respuesta = "de acuerdo te lo recordare a las 7 de la noche";
+            recordar += "programado para recordar a la hora :"+hwhenrmb+"del dia";
+            localStorage.setItem("remember_19",recordar); 
         }
         else if (cmd.indexOf("ocho")  > -1 && cmd.indexOf("tarde")  > -1  || cmd.indexOf('ocho') > -1 && cmd.indexOf("pm")  > -1 ) {
-            whenrmb = "20";
-            localStorage.setItem("hcuandorec", whenrmb);
+            hwhenrmb = "20";
+            localStorage.setItem("hr_20", hwhenrmb);
             console.log(whenrmb);
-            respuesta = "de acuerdo te lo recordare a las 8 de la noche"; 
+            respuesta = "de acuerdo te lo recordare a las 8 de la noche";
+            recordar += "programado para recordar a la hora :"+hwhenrmb+"del dia";
+            localStorage.setItem("remember_20",recordar); 
         }
         else if (cmd.indexOf("nueve")  > -1 && cmd.indexOf("tarde")  > -1  || cmd.indexOf('nueve') > -1 && cmd.indexOf("pm")  > -1 ) {
-            whenrmb = "21";
-            localStorage.setItem("hcuandorec", whenrmb);
+            hwhenrmb = "21";
+            localStorage.setItem("hr_21", hwhenrmb);
             console.log(whenrmb);
-            respuesta = "de acuerdo te lo recordare a las 9 de la noche"; 
+            respuesta = "de acuerdo te lo recordare a las 9 de la noche";
+            recordar += "programado para recordar a la hora :"+hwhenrmb+"del dia";
+            localStorage.setItem("remember_21",recordar); 
         }
         else if (cmd.indexOf("diez")  > -1 && cmd.indexOf("tarde")  > -1  || cmd.indexOf('diez') > -1 && cmd.indexOf("pm")  > -1 ) {
-            whenrmb = "22";
-            localStorage.setItem("hcuandorec", whenrmb);
+            hwhenrmb = "22";
+            localStorage.setItem("hr_22", hwhenrmb);
             console.log(whenrmb);
-            respuesta = "de acuerdo te lo recordare a las 10 de la noche"; 
+            respuesta = "de acuerdo te lo recordare a las 10 de la noche";
+            recordar += "programado para recordar a la hora :"+hwhenrmb+"del dia";
+            localStorage.setItem("remember_22",recordar); 
         }
         else if (cmd.indexOf("once")  > -1 && cmd.indexOf("tarde")  > -1  || cmd.indexOf('once') > -1 && cmd.indexOf("pm")  > -1 ) {
             whenrmb = "23";
-            localStorage.setItem("hcuandorec", whenrmb);
+            localStorage.setItem("hr_23", hwhenrmb);
             console.log(whenrmb);
-            respuesta = "de acuerdo te lo recordare a las 11 de la noche"; 
+            respuesta = "de acuerdo te lo recordare a las 11 de la noche";
+            recordar += "programado para recordar a la hora :"+hwhenrmb+"del dia";
+            localStorage.setItem("remember_23",recordar); 
         }
         else if (cmd.indexOf("doce")  > -1  && cmd.indexOf("mañana")  > -1  || cmd.indexOf('doce') > -1 && cmd.indexOf("am")  > -1 ) {
-            whenrmb = "24";
-            localStorage.setItem("hcuandorec", whenrmb);
+            hwhenrmb = "24";
+            localStorage.setItem("hr_24", hwhenrmb);
             console.log(whenrmb);
-            respuesta = "de acuerdo te lo recordare a las 12 de la mañana"; 
+            respuesta = "de acuerdo te lo recordare a las 12 de la mañana";
+            recordar += "programado para recordar a la hora :"+hwhenrmb+"del dia";
+            localStorage.setItem("remember_24",recordar); 
         }
         else {
             respuesta = "no he reconocido la hora, no se olvide de especificar la hora y si es pm o am, intente agendar de nuevo"

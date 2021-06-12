@@ -174,10 +174,64 @@ function comandos(cmd, frase) {
         }
     }
     else if (cmd.indexOf("borrar recordatorio") > -1 || cmd.indexOf('eliminar recordatorio') > -1 || cmd.indexOf('limpia') > -1 && cmd.indexOf('agenda') > -1 || cmd.indexOf('eliminar') > -1 && cmd.indexOf('agenda') > -1) {
-        localStorage.removeItem("cuandorec");
-        localStorage.removeItem("hcuandorec")
-        remember = remember.replace("no se te olvide que", "")
-        respuesta = "De acuerdo, eliminando el recordatorio"+remember;
+        localStorage.removeItem("remember_all_day"),
+        localStorage.removeItem("remember_1"),
+        localStorage.removeItem("remember_2"),
+        localStorage.removeItem("remember_3"),
+        localStorage.removeItem("remember_4"),
+        localStorage.removeItem("remember_5"),
+        localStorage.removeItem("remember_6"),
+        localStorage.removeItem("remember_7"),
+        localStorage.removeItem("remember_8"),
+        localStorage.removeItem("remember_9"),
+        localStorage.removeItem("remember_10"),
+        localStorage.removeItem("remember_11"),
+        localStorage.removeItem("remember_12"),
+        localStorage.removeItem("remember_13"),
+        localStorage.removeItem("remember_14"),
+        localStorage.removeItem("remember_15"),
+        localStorage.removeItem("remember_16"),
+        localStorage.removeItem("remember_17"),
+        localStorage.removeItem("remember_18"),
+        localStorage.removeItem("remember_19"),
+        localStorage.removeItem("remember_20"),
+        localStorage.removeItem("remember_21"),
+        localStorage.removeItem("remember_22"),
+        localStorage.removeItem("remember_23"),
+        localStorage.removeItem("remember_24"),
+        localStorage.removeItem("cuandorec_hoy"),
+        localStorage.removeItem("cuandorec_mañana"),
+        localStorage.removeItem("cuandorec_pasado_mañana"),
+        localStorage.removeItem("cuandorec_tres_dias"),
+        localStorage.removeItem("cuandorec_cuatro_dias"),
+        localStorage.removeItem("cuandorec_cinco_dias"),
+        localStorage.removeItem("cuandorec_seis_dias"),
+        localStorage.removeItem("hr_all_day"),
+        localStorage.removeItem("hr_1"),
+        localStorage.removeItem("hr_2"),
+        localStorage.removeItem("hr_3"),
+        localStorage.removeItem("hr_4"),
+        localStorage.removeItem("hr_5"),
+        localStorage.removeItem("hr_6"),
+        localStorage.removeItem("hr_7"),
+        localStorage.removeItem("hr_8"),
+        localStorage.removeItem("hr_9"),
+        localStorage.removeItem("hr_10"),
+        localStorage.removeItem("hr_11"),
+        localStorage.removeItem("hr_12"),
+        localStorage.removeItem("hr_13"),
+        localStorage.removeItem("hr_14"),
+        localStorage.removeItem("hr_15"),
+        localStorage.removeItem("hr_16"),
+        localStorage.removeItem("hr_17"),
+        localStorage.removeItem("hr_18"),
+        localStorage.removeItem("hr_19"),
+        localStorage.removeItem("hr_20"),
+        localStorage.removeItem("hr_21"),
+        localStorage.removeItem("hr_22"),
+        localStorage.removeItem("hr_23"),
+        localStorage.removeItem("hr_24"),
+        respuesta = "De acuerdo limpiando agenda";
         guiñar(this);
         remember = "";
         localStorage.setItem("remember", remember);
@@ -196,8 +250,7 @@ function comandos(cmd, frase) {
          recuerdo = recuerdo.replace("a ti", "a mi");
          recordar = "no se te olvide que"+recuerdo;
          respuesta = "de acuerdo, entre hoy y en una semana cuando quieres que te lo recuerde?";
-         localStorage.setItem("remember",recordar);
-        recordatorio(this);
+        recordatorio(this,recordar);
          
 
 
