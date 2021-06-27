@@ -122,12 +122,12 @@ function comandos(cmd, frase) {
     else if (cmd.indexOf("abrir google") > -1 || cmd.indexOf('abre google') > -1 || cmd.indexOf('busca google') > -1 || cmd.indexOf('ir a google') > -1){
         window.open('https://google.com/'); 
         guiñar(this);
-        respuesta = "¡Ok"+username+"! Abriendo Whatsapp Web.";
+        respuesta = "¡Ok"+username+"! Abriendo Google.";
     }                
     else if (cmd.indexOf("abrir youtube") > -1 || cmd.indexOf('abre youtube') > -1 || cmd.indexOf('busca youtube') > -1 || cmd.indexOf('ir a youtube') > -1 ){
         window.open('https://www.youtube.com/'); 
         guiñar(this);
-        respuesta = "¡Ok"+username+"! Abriendo Whatsapp Web.";
+        respuesta = "¡Ok"+username+"! Abriendo YouTube.";
     }
     else if (cmd.indexOf("abrir whatsapp") > -1 || cmd.indexOf('abre whatsapp') > -1 || cmd.indexOf('busca whatsapp') > -1 || cmd.indexOf('ir a whatsapp') > -1){
         window.open('https://web.whatsapp.com/');
