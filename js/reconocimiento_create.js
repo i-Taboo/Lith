@@ -17,7 +17,7 @@ recognition.interResults = false;
 recognition.addEventListener("start", () => {
  document.getElementById("audio").setAttribute("src","audio/sra.mp3");
  document.getElementById("audio").setAttribute("autoplay","true");
- microfono.setAttribute("src","img/bx-circle_w.svg");
+ microfono.setAttribute("src","img/bx-circle.svg");
  microfono.classList.add("circulo");
 })
 
@@ -28,7 +28,7 @@ recognitionDiadere.interResults = false;
 recognitionDiadere.addEventListener("start", () => {
     document.getElementById("audio").setAttribute("src","audio/sra.mp3");
     document.getElementById("audio").setAttribute("autoplay","true");
-    microfono.setAttribute("src","img/bx-circle_w.svg");
+    microfono.setAttribute("src","img/bx-circle.svg");
     microfono.classList.add("circulo");
 
 
@@ -41,7 +41,7 @@ recognitionHoradere.interResults = false;
 recognitionHoradere.addEventListener("start", () => {
     document.getElementById("audio").setAttribute("src","audio/sra.mp3");
     document.getElementById("audio").setAttribute("autoplay","true");
-    microfono.setAttribute("src","img/bx-circle_w.svg");
+    microfono.setAttribute("src","img/bx-circle.svg");
     microfono.classList.add("circulo");
 
 })
