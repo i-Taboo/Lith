@@ -68,6 +68,7 @@ let hwhenr = [
 ]
 let today = JSON.stringify(hoy);
 let hour = JSON.stringify(horactual);
+let minutes = JSON.stringify(minutos);
 let welcome = 0;
 let ya_hubo_bienvenida = localStorage.getItem("ya_hubo_welcome");
 tema = localStorage.getItem("temas");

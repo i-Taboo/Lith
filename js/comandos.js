@@ -55,6 +55,9 @@ function comandos(cmd, frase) {
     else if (cmd.includes("tira") && cmd.includes("dado") && cmd.length < 15 || cmd.includes("lanza") && cmd.includes("dado") && cmd.length < 15) {
         respuesta = "De acuerdo, el dado revoto "+numero_aleatorio(7)+" veces y salio el numero "+numero_aleatorio(7);
     }
+    else if (cmd.includes("que") && cmd.includes("hora") && cmd.length < 15 || cmd.includes("dime la") && cmd.includes("hora") && cmd.length < 15||cmd.includes("hora") && cmd.length < 15) {
+        respuesta = "son las "+hour+" con "+minutes+" minutos"
+    }
                     //configuracion de usuario
     else if (cmd.includes("desactiva") && cmd.includes("visualizacion") && cmd.length < 50 || cmd.includes("quita") && cmd.includes("visualizacion") && cmd.length < 50 || cmd.includes("inactiva") && cmd.includes("visualizacion") && cmd.length < 50) {
         vdtxt = 1;
@@ -122,7 +125,7 @@ function comandos(cmd, frase) {
     else if (cmd.indexOf("abrir google") > -1 || cmd.indexOf('abre google') > -1 || cmd.indexOf('busca google') > -1 || cmd.indexOf('ir a google') > -1){
         window.open('https://google.com/'); 
         guiñar(this);
-        respuesta = "¡Ok"+username+"! Abriendo Google.";
+        respuesta = "¡Ok"+username+"! Abriendo google.";
     }                
     else if (cmd.indexOf("abrir youtube") > -1 || cmd.indexOf('abre youtube') > -1 || cmd.indexOf('busca youtube') > -1 || cmd.indexOf('ir a youtube') > -1 ){
         window.open('https://www.youtube.com/'); 

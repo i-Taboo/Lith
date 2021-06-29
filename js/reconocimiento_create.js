@@ -1,9 +1,10 @@
-const startrecord = document.body;
+const startrecord = document.getElementById("startrecord");
 let voca = document.getElementById("voca");
 let ojo1 = document.getElementById("ojo1");
 let ojo2 = document.getElementById("ojo2");
+let microfono = document.getElementById("microfono_boton");
 
-document.body.addEventListener("click", () => {
+startrecord.addEventListener("click", () => {
     recognition.start();
 });
 
@@ -16,11 +17,8 @@ recognition.interResults = false;
 recognition.addEventListener("start", () => {
  document.getElementById("audio").setAttribute("src","audio/sra.mp3");
  document.getElementById("audio").setAttribute("autoplay","true");
- voca.setAttribute("src","img/bx-circle_w.svg");
- voca.classList.add("circulo");
- ojo1.classList.add("oculto")
- ojo2.classList.add("oculto")
-
+ microfono.setAttribute("src","img/bx-circle_w.svg");
+ microfono.classList.add("circulo");
 })
 
 let recognitionDiadere = new webkitSpeechRecognition();
@@ -30,10 +28,9 @@ recognitionDiadere.interResults = false;
 recognitionDiadere.addEventListener("start", () => {
     document.getElementById("audio").setAttribute("src","audio/sra.mp3");
     document.getElementById("audio").setAttribute("autoplay","true");
-    voca.setAttribute("src","img/bx-circle_w.svg");
-    voca.classList.add("circulo");
-    ojo1.classList.add("oculto")
-    ojo2.classList.add("oculto")
+    microfono.setAttribute("src","img/bx-circle_w.svg");
+    microfono.classList.add("circulo");
+
 
 })
 
@@ -44,10 +41,9 @@ recognitionHoradere.interResults = false;
 recognitionHoradere.addEventListener("start", () => {
     document.getElementById("audio").setAttribute("src","audio/sra.mp3");
     document.getElementById("audio").setAttribute("autoplay","true");
-    voca.setAttribute("src","img/bx-circle_w.svg");
-    voca.classList.add("circulo");
-    ojo1.classList.add("oculto")
-    ojo2.classList.add("oculto")
+    microfono.setAttribute("src","img/bx-circle_w.svg");
+    microfono.classList.add("circulo");
+
 })
 
 
