@@ -254,7 +254,13 @@ background-color: rgb(175, 175, 175);
     .cara{
         width: 100%;
         height: 100%;
-        
+    }
+    .micro_buttom{
+        width: 20vw;
+        height: 20vw;
+    }
+    .mcr{
+        width: 10vw;
     }
     .texto{
         font-size: 4vw;
